@@ -1,0 +1,6 @@
+promo_id,promo_name,start_date,end_date,categories,discount_pct,eligible
+P01,New Year Fresh Start,2025-01-06,2025-01-31,Fruit,10,All B2B accounts except Java House (fixed contract prices); not walk-ins
+P02,Mid-Year Veg Special 2025,2025-06-16,2025-07-31,Leafy Greens; Vegetables,8,All B2B accounts except Java House (fixed contract prices); not walk-ins
+P03,Festive Early Order - Herbs,2025-10-01,2025-10-31,Herbs & Spices,5,All B2B accounts except Java House (fixed contract prices); not walk-ins
+P04,January Fruit Push 2026,2026-01-05,2026-01-31,Fruit,10,All B2B accounts except Java House (fixed contract prices); not walk-ins
+P05,Mid-Year Roots & Potato Promo,2026-06-15,2026-07-31,Potato Products; Roots & Tubers,7,All B2B accounts except Java House (fixed contract prices); not walk-ins
