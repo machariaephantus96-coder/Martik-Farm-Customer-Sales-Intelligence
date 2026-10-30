@@ -1,0 +1,46 @@
+step,table,check,before,after,action
+0 load,all,raw rows (orders / order_lines / payments),"20,852 / 127,736 / 20,236",-,"raw files read, never modified"
+1 types,orders,order_date: text -> datetime (values that fail to parse),0,0,"parsed 20,852 values to datetime64"
+1 types,orders,invoice_due_date: text -> datetime (values that fail to parse),0,0,"parsed 20,852 values to datetime64"
+1 types,payments,payment_date: text -> datetime (values that fail to parse),0,0,"parsed 20,236 values to datetime64"
+1 types,calendar,date: text -> datetime (values that fail to parse),0,0,parsed 730 values to datetime64
+1 types,promotions,start_date: text -> datetime (values that fail to parse),0,0,parsed 5 values to datetime64
+1 types,promotions,end_date: text -> datetime (values that fail to parse),0,0,parsed 5 values to datetime64
+1 types,customers,first_order_date: text -> datetime (values that fail to parse),0,0,parsed 72 values to datetime64
+1 types,all,tables loaded,9,9,IDs stripped of whitespace; numeric columns coerced
+2 duplicates,order_lines,exact duplicate rows (all columns identical),382,0,kept first occurrence of each row
+2 duplicates,order_lines,duplicated line_id,382,0,resolved by the step above
+2 duplicates,order_lines,row count,127736,127354,removed 382 double-entered lines
+2 duplicates,order_lines,same product twice in one order (different line_id),0,0,none found - no further action
+2 duplicates,orders,duplicated order_id,0,0,none found
+2 duplicates,payments,duplicated payment_id,0,0,none found
+2 duplicates,customers,duplicated customer_id,0,0,none found
+2 duplicates,products,duplicated product_id,0,0,none found
+2 duplicates,payments,more than one payment for the same order,0,0,none found
+3 consistency,payments,distinct spellings of payment method,17,4,"mapped to M-Pesa / Bank Transfer / Cheque / Cash (617 rows rewritten, 0 unmapped)"
+4 missing,orders,delivery_area missing,8460,0,"8,302 were walk-in sales (no delivery: labelled 'In-shop (walk-in)'); 158 account orders recovered from the customer's delivery area"
+4 missing,orders,order_channel missing,447,0,170 walk-in sales set to 'Walk-in'; the rest labelled 'Unknown' (not guessed)
+4 missing,order_lines,promo_id blank,122688,0,blank means no promotion -> 'NO_PROMO'
+4 missing,order_lines,reject_reason blank,124864,0,blank means nothing rejected -> 'None' (0 rows had a rejection with no reason)
+4 missing,orders,"nulls in key columns order_id, order_date, customer_id, ...",0,0,none
+4 missing,order_lines,"nulls in key columns line_id, order_id, product_id, ...",0,0,none
+4 missing,payments,"nulls in key columns payment_id, order_id, payment_date, ...",0,0,none
+5 outliers,order_lines,unit price > 3x the monthly list price (decimal-slip keying errors),82,0,82 corrected by dividing price and line total by 10 (flag: price_corrected=1)
+5 outliers,order_lines,unit price outside 0.8x-1.4x of monthly list price,82,0,all remaining prices are inside the expected band
+5 outliers,order_lines,quantity above Q3 + 3xIQR within product x customer segment,388,388,"flagged (is_qty_outlier=1), kept: large accounts place genuine bulk orders"
+5 outliers,order_lines,zero/negative quantity or price,0,0,none
+5 outliers,order_lines,rejected quantity greater than ordered,0,0,none
+6 reconcile,orders vs order_lines,orders whose line totals do not add up to the subtotal (>1 KES),450,0,fixed by removing duplicate lines and correcting price slips
+6 reconcile,order_lines,line_total != billed qty x price x (1 - discount),0,0,recomputed totals agree after the fixes above
+6 reconcile,orders,order_total != subtotal + delivery fee,0,0,none
+6 reconcile,orders,invoice_due_date != order_date + payment terms,0,0,none
+6 reconcile,payments,payment amount != order total,0,0,agree
+6 reconcile,payments,payment dated before the order,0,0,none
+6 reconcile,payments,payments on orders not marked Paid,0,0,none
+6 reconcile,orders,orders marked Paid with no payment record,0,0,none
+6 reconcile,lines -> orders,orphan keys (no matching parent),0,0,none
+6 reconcile,lines -> products,orphan keys (no matching parent),0,0,none
+6 reconcile,orders -> customers,orphan keys (no matching parent),0,0,none
+6 reconcile,payments -> orders,orphan keys (no matching parent),0,0,none
+8 checks,all,post-conditions passed,0,11,line_id unique; order_id unique; payment_id unique; orders reconcile to lines; line totals recompute; payment methods standardised; no nulls in order_channel/delivery_area; all lines have a known order; dates inside the data window; no negative billed quantity; churn panel has both classes
+9 output,all,clean rows (orders / order_lines / payments),-,"20,852 / 127,354 / 20,236",written to data_clean/

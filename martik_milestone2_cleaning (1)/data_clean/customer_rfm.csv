@@ -1,0 +1,71 @@
+customer_id,first_order,last_order,frequency,monetary_kes,avg_order_value_kes,avg_days_to_pay,late_payment_rate,recency_days,tenure_days,R,F,M,rfm_segment,customer_name,segment,county
+C001,2024-10-01,2026-09-30,583,11891049.0,20396.31,36.7,0.875,0,729,4,5,5,Champions,Java House,Coffee Chain,Nairobi
+C002,2024-10-02,2026-09-30,505,6871026.94,13605.99,57.4,0.991,0,728,4,5,5,Champions,Norfolk Hotel,Hotel/Lodge,Nairobi
+C003,2024-10-01,2026-09-30,403,4173575.97,10356.27,39.1,0.945,0,729,4,5,5,Champions,The Chef Restaurant,Restaurant,Nairobi
+C004,2024-10-02,2026-09-30,287,2675184.53,9321.2,80.2,1.0,0,728,4,5,5,Champions,Riara School,School/Daycare,Nairobi
+C101,2024-10-01,2026-09-30,390,1741612.28,4465.67,21.0,0.786,0,729,4,5,5,Champions,Restaurant 001,Restaurant,Nairobi
+C102,2024-10-01,2026-09-28,173,613375.13,3545.52,24.5,0.912,2,729,2,3,3,At risk,Restaurant 002,Restaurant,Nairobi
+C103,2024-10-01,2026-09-30,286,1073199.77,3752.45,12.8,0.747,0,729,4,5,5,Champions,Restaurant 003,Restaurant,Nairobi
+C104,2024-10-01,2025-03-01,38,108719.0,2861.03,38.9,0.974,578,729,1,1,1,Lost / low value,Restaurant 004,Restaurant,Nairobi
+C105,2024-10-04,2026-06-20,274,1001186.85,3653.97,15.3,0.846,102,726,2,4,4,At risk,Restaurant 005,Restaurant,Kiambu
+C106,2024-10-02,2026-09-26,239,1024206.53,4285.38,11.9,0.931,4,728,2,4,4,At risk,Restaurant 006,Restaurant,Nairobi
+C107,2026-05-04,2026-09-29,48,183216.52,3817.01,35.7,0.794,1,149,3,1,1,Needs attention,Restaurant 007,Restaurant,Nairobi
+C108,2024-10-03,2026-09-28,185,713491.3,3856.71,18.1,0.767,2,727,3,4,4,Loyal,Restaurant 008,Restaurant,Nairobi
+C109,2025-05-24,2026-01-17,32,106269.72,3320.93,23.9,0.969,256,494,1,1,1,Lost / low value,Restaurant 009,Restaurant,Kiambu
+C110,2024-10-08,2026-09-15,124,414888.92,3345.88,18.8,0.811,15,722,2,3,2,At risk,Restaurant 010,Restaurant,Nairobi
+C111,2024-10-01,2026-09-28,351,1740050.9,4957.41,42.6,0.951,2,729,3,5,5,Loyal,Restaurant 011,Restaurant,Nairobi
+C112,2026-03-24,2026-09-29,58,217630.18,3752.24,43.1,0.925,1,190,3,1,1,Needs attention,Restaurant 012,Restaurant,Nairobi
+C113,2024-10-04,2026-09-28,222,1005615.49,4529.8,39.2,1.0,2,726,3,4,4,Loyal,Restaurant 013,Restaurant,Kiambu
+C114,2024-10-04,2026-09-28,296,818865.85,2766.44,15.3,1.0,2,726,3,5,4,Loyal,Restaurant 014,Restaurant,Kiambu
+C115,2024-10-02,2026-09-29,269,1014589.54,3771.71,15.7,0.875,1,728,4,4,4,Champions,Restaurant 015,Restaurant,Nairobi
+C116,2024-10-01,2025-05-21,76,211981.0,2789.22,35.9,0.867,497,729,1,2,1,Lost / low value,Restaurant 016,Restaurant,Nairobi
+C117,2026-03-31,2026-09-29,60,212064.53,3534.41,40.5,0.959,1,183,4,1,1,Recent,Restaurant 017,Restaurant,Nairobi
+C118,2025-09-01,2026-09-29,154,537361.75,3489.36,42.2,0.956,1,394,4,3,3,Loyal,Restaurant 018,Restaurant,Nairobi
+C119,2025-12-25,2026-09-25,89,302486.12,3398.72,20.2,1.0,5,279,2,2,2,Lost / low value,Restaurant 019,Restaurant,Nairobi
+C120,2026-06-02,2026-09-28,33,151508.9,4591.18,16.6,0.607,2,120,3,1,1,Needs attention,Restaurant 020,Restaurant,Nairobi
+C121,2024-10-02,2024-12-06,30,94512.0,3150.4,45.7,1.0,663,728,1,1,1,Lost / low value,Restaurant 021,Restaurant,Nairobi
+C122,2024-10-01,2026-09-25,242,907304.71,3749.19,25.8,0.974,5,729,2,4,4,At risk,Restaurant 022,Restaurant,Nairobi
+C123,2024-10-07,2026-09-21,180,308510.21,1713.95,23.0,0.971,9,723,2,3,2,At risk,Cafe 023,Cafe/Bakery,Nairobi
+C124,2024-10-01,2025-09-24,60,138350.8,2305.85,15.2,0.817,371,729,1,2,1,Lost / low value,Cafe 024,Cafe/Bakery,Nairobi
+C125,2024-11-17,2026-09-28,182,450817.31,2477.02,35.4,0.841,2,682,3,4,3,Loyal,Cafe 025,Cafe/Bakery,Nairobi
+C126,2024-10-02,2026-09-30,302,476236.65,1576.94,39.1,1.0,0,728,4,5,3,Champions,Cafe 026,Cafe/Bakery,Nairobi
+C127,2024-10-01,2026-09-30,133,228408.15,1717.35,22.8,0.946,0,729,5,3,2,Loyal,Cafe 027,Cafe/Bakery,Nairobi
+C128,2024-10-03,2026-04-23,101,188791.92,1869.23,10.6,0.644,160,727,1,2,1,Lost / low value,Cafe 028,Cafe/Bakery,Nairobi
+C129,2024-12-21,2026-09-29,111,298557.84,2689.71,19.4,0.972,1,648,4,2,2,Recent,Cafe 029,Cafe/Bakery,Nairobi
+C130,2024-10-01,2026-09-30,225,563026.84,2502.34,20.3,0.986,0,729,5,4,3,Champions,Cafe 030,Cafe/Bakery,Nairobi
+C131,2024-10-03,2026-09-29,167,322650.01,1932.04,24.0,0.907,1,727,4,3,2,Loyal,Cafe 031,Cafe/Bakery,Nairobi
+C132,2025-01-13,2026-09-30,263,543213.1,2065.45,21.5,0.893,0,625,5,4,3,Champions,Cafe 032,Cafe/Bakery,Nairobi
+C133,2024-10-01,2026-06-03,541,6012476.95,11113.64,47.4,0.989,119,729,2,5,5,At risk,Hotel 033,Hotel/Lodge,Nairobi
+C134,2026-04-26,2026-09-28,46,282753.54,6146.82,41.2,1.0,2,157,3,1,2,Needs attention,Hotel 034,Hotel/Lodge,Nairobi
+C135,2026-03-07,2026-07-09,56,283000.46,5053.58,72.1,1.0,83,207,2,1,2,Lost / low value,Hotel 035,Hotel/Lodge,Nairobi
+C136,2026-04-14,2026-09-28,44,362941.28,8248.67,76.1,0.913,2,169,3,1,2,Needs attention,Hotel 036,Hotel/Lodge,Nairobi
+C137,2024-10-01,2026-09-30,466,4258120.2,9137.6,57.8,1.0,0,729,5,5,5,Champions,Hotel 037,Hotel/Lodge,Kiambu
+C138,2024-10-02,2025-08-31,106,724312.7,6833.14,53.5,0.981,395,728,1,2,4,Lost / low value,Hotel 038,Hotel/Lodge,Nairobi
+C139,2024-10-04,2026-09-19,132,608600.33,4610.61,11.2,0.939,11,726,2,3,3,At risk,Caterer 039,Caterer,Nairobi
+C140,2025-08-19,2026-09-30,152,1358043.41,8934.5,10.3,0.711,0,407,5,3,5,Loyal,Caterer 040,Caterer,Nairobi
+C141,2024-10-04,2026-09-28,107,695529.0,6500.27,11.1,0.67,2,726,3,2,3,Needs attention,Caterer 041,Caterer,Nairobi
+C142,2025-07-26,2026-02-25,44,205738.93,4675.88,3.4,0.523,217,431,1,1,1,Lost / low value,Caterer 042,Caterer,Nairobi
+C143,2024-10-01,2026-09-30,177,1061897.93,5999.42,4.6,0.591,0,729,5,3,5,Loyal,Caterer 043,Caterer,Nairobi
+C144,2025-08-12,2026-09-30,134,867546.72,6474.23,13.3,0.862,0,414,5,3,4,Loyal,Caterer 044,Caterer,Nairobi
+C145,2024-10-11,2026-05-08,125,894493.42,7155.95,11.7,0.581,145,719,2,3,4,At risk,Caterer 045,Caterer,Nairobi
+C146,2024-10-10,2025-07-09,83,571899.48,6890.36,20.6,0.783,448,720,1,2,3,Lost / low value,Caterer 046,Caterer,Nairobi
+C147,2025-03-23,2025-11-12,41,231586.26,5648.45,19.9,0.718,322,556,1,1,2,Lost / low value,Caterer 047,Caterer,Nairobi
+C148,2026-06-20,2026-09-30,36,192202.97,5338.97,6.1,0.848,0,102,5,1,1,Recent,Caterer 048,Caterer,Nairobi
+C149,2024-10-05,2026-09-16,118,491537.83,4165.57,59.0,0.972,14,725,2,2,3,Lost / low value,School 049,School/Daycare,Nairobi
+C150,2025-06-23,2026-09-29,128,765977.69,5984.2,39.9,0.917,1,464,4,3,4,Loyal,School 050,School/Daycare,Nairobi
+C151,2024-10-01,2026-09-30,224,1423440.2,6354.64,57.9,0.99,0,729,5,4,5,Champions,School 051,School/Daycare,Nairobi
+C152,2024-10-01,2026-09-30,229,1468239.57,6411.53,77.0,1.0,0,729,5,4,5,Champions,School 052,School/Daycare,Nairobi
+C153,2026-01-05,2026-09-28,104,488981.94,4701.75,77.9,1.0,2,268,3,2,3,Needs attention,School 053,School/Daycare,Nairobi
+C154,2025-08-27,2026-09-29,86,373330.82,4341.06,66.8,1.0,1,399,4,2,2,Recent,School 054,School/Daycare,Nairobi
+C155,2024-11-02,2026-09-30,288,706144.37,2451.89,24.4,0.931,0,697,5,5,4,Champions,Grocer 055,Grocer/Supermarket,Nairobi
+C156,2025-07-07,2025-11-19,72,182022.62,2528.09,17.6,0.913,315,450,1,2,1,Lost / low value,Grocer 056,Grocer/Supermarket,Nairobi
+C157,2025-06-12,2026-09-30,264,677834.15,2567.55,11.0,0.741,0,475,5,4,3,Champions,Grocer 057,Grocer/Supermarket,Nairobi
+C158,2025-11-27,2026-09-30,117,408347.01,3490.15,14.6,0.928,0,307,5,2,2,Recent,Grocer 058,Grocer/Supermarket,Nairobi
+C159,2025-04-23,2026-09-24,93,242051.65,2602.71,41.8,0.92,6,525,2,2,2,Lost / low value,Grocer 059,Grocer/Supermarket,Nairobi
+C160,2025-01-31,2026-04-24,139,472524.3,3399.46,34.6,0.848,159,607,1,3,3,At risk,Grocer 060,Grocer/Supermarket,Nairobi
+C161,2025-03-08,2026-09-30,331,1112097.5,3359.81,3.9,0.532,0,571,5,5,5,Champions,Fast Food 061,Fast Food,Nairobi
+C162,2024-10-02,2025-01-11,18,66915.5,3717.53,21.4,0.833,627,728,1,1,1,Lost / low value,Fast Food 062,Fast Food,Nairobi
+C163,2024-10-02,2026-09-25,293,842655.23,2875.96,3.8,0.63,5,728,2,5,4,At risk,Fast Food 063,Fast Food,Nairobi
+C164,2025-03-17,2026-04-15,170,406849.24,2393.23,9.3,0.928,168,562,1,3,2,At risk,Fast Food 064,Fast Food,Nairobi
+C165,2025-06-28,2026-09-28,180,502418.1,2791.21,17.2,0.67,2,459,3,4,3,Loyal,Fast Food 065,Fast Food,Nairobi
+C166,2025-03-18,2026-09-28,235,912970.95,3884.98,14.2,0.965,2,561,3,4,4,Loyal,Fast Food 066,Fast Food,Kiambu

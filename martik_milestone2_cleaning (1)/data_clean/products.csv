@@ -1,0 +1,72 @@
+product_id,product_name,price_list_label,category,unit,base_price_jan2026_kes,source_store_id,shelf_life_days,is_imported,is_peak_season_premium
+1,Homefries,HOMEFIES,Potato Products,kg,90,S01,7,0,0
+2,Potatoes White,POTATOES WHITE,Roots & Tubers,kg,70,S02,30,0,0
+3,DNC Potatoes,DNC POTATOES,Potato Products,kg,115,S01,7,0,0
+4,Wedge Potatoes,WEDGE POTATOES,Potato Products,kg,95,S01,7,0,0
+5,Tomatoes,TOMATOES,Vegetables,kg,60,S02,5,0,1
+6,Lyonnaise Potatoes,LYONNAISE POTATOES,Potato Products,kg,100,S01,7,0,0
+7,Pineapples,PINNAPLES FRUITS,Fruit,kg,75,S02,10,0,0
+8,Mushroom Punnets,MUSHROOM PRUNNETS,Vegetables,punnet,300,S02,5,0,0
+9,Oranges Local,ORANGES LOCAL,Fruit,kg,40,S02,10,0,1
+10,Garlic Imported (Peeled),GARLIC IMPORTED (PELLED),Alliums,kg,750,S02,30,1,0
+11,Ginger Fresh,GINGER FLESH,Herbs & Spices,kg,200,S02,5,0,0
+12,Apples Red,APPLES RED,Fruit,kg,300,S02,10,1,0
+13,Apples Green,APPLES GREEN,Fruit,kg,350,S02,10,1,0
+14,Onion Red (Peeled),ONION RED (PELLED),Alliums,kg,90,S02,30,0,1
+15,Banana,BANANA,Fruit,kg,55,S02,10,0,0
+16,Avocado,AVOCADO,Fruit,kg,100,S02,5,0,0
+17,Watermelon,WATERMELON,Fruit,kg,50,S02,10,0,0
+18,Carrots,CARROTS,Vegetables,kg,40,S02,9,0,0
+19,Red Pepper,RED PEPPER,Peppers & Chillies,kg,300,S02,8,0,1
+20,Yellow Pepper,YELLOW PEPPER,Peppers & Chillies,kg,300,S02,8,0,1
+21,Red Bullets Chilli,RED BULLETS CHILLI,Peppers & Chillies,kg,350,S02,8,0,1
+22,Green Chillies,GREEN CHILLIES,Peppers & Chillies,kg,110,S02,8,0,1
+23,Lemon Imported,LEMON IMPORTED,Fruit,kg,310,S02,10,1,0
+24,Oranges Imported,ORANGES IMPORTED,Fruit,kg,250,S02,10,1,1
+25,Lemon Local,LEMON LOCAL,Fruit,kg,80,S02,10,0,0
+26,Sukuma Wiki,SUKUMA WIKI,Leafy Greens,kg,35,S02,3,0,0
+27,Basil,BASIL,Herbs & Spices,bunch,30,S02,5,0,0
+28,Salad Onion,SALAD ONION,Alliums,kg,130,S02,30,0,0
+29,Lemon Grass,LEMON GRASS (BUNCH),Herbs & Spices,bunch,20,S02,5,0,0
+30,Chives,CHIVES,Herbs & Spices,bunch,30,S02,5,0,0
+31,Cucumber,CUCUMBER,Vegetables,kg,80,S02,9,0,0
+32,Jalapeno,JALAPENO,Peppers & Chillies,kg,170,S02,8,0,1
+33,Shelled Maize,SHELLED MAIZE,Grains & Legumes,kg,110,S02,90,0,0
+34,Sweet Melon,SWEET MELON,Fruit,kg,110,S02,10,0,0
+35,Pawpaw,PAWPAW,Fruit,kg,80,S02,5,0,0
+36,Mangoes,MANGOES,Fruit,kg,70,S02,5,0,0
+37,White Onion (Peeled),WHITE ONION (PELLED),Alliums,kg,75,S02,30,0,1
+38,Broccoli,BROCOLLI,Vegetables,kg,130,S02,9,0,0
+39,Red Cabbage,RED CABBAGE,Vegetables,kg,80,S02,9,0,0
+40,White Cabbage,WHITE CABBAGE,Vegetables,kg,30,S02,9,0,0
+41,Cauliflower,CAULIFLOWER,Vegetables,kg,130,S02,9,0,0
+42,Cherry Tomatoes,CHERRY TOMATOES,Vegetables,kg,80,S02,5,0,1
+43,Coriander,CORRIANDER,Herbs & Spices,bunch,160,S02,5,0,0
+44,Eggplant,EGG PLANT,Vegetables,kg,80,S02,9,0,0
+45,Garden Peas,GARDEN PEAS,Vegetables,kg,250,S02,9,0,0
+46,Snow Peas,SNOW PEAS,Vegetables,kg,30,S02,9,0,0
+47,Sugar Snaps,SUGAR SNAPS,Vegetables,kg,30,S02,9,0,0
+48,Mint,MINT,Herbs & Spices,bunch,20,S02,5,0,0
+49,Parsley,PARSLEY,Herbs & Spices,bunch,30,S02,5,0,0
+50,Baby Spinach 200g,BABY SPINACH 200GM,Leafy Greens,pack,50,S02,3,0,0
+51,Thyme,THYME,Herbs & Spices,bunch,30,S02,5,0,0
+52,Rosemary,ROSEMARY,Herbs & Spices,bunch,15,S02,5,0,0
+53,Baby Marrow,BABY MARROW,Vegetables,kg,100,S02,9,0,0
+54,French Beans,FRENCH BEANS,Vegetables,kg,90,S02,9,0,0
+55,Sweetcorn,SWEETCORNS,Vegetables,kg,180,S02,9,0,0
+56,Passion Fruits,PASSION FRUITS,Fruit,kg,220,S02,10,0,0
+57,Butternuts,BUTTENUTS,Vegetables,kg,90,S02,9,0,0
+58,Sage,SAGE,Herbs & Spices,bunch,30,S02,5,0,0
+59,Green Pepper,GREEN PEPPER,Peppers & Chillies,kg,100,S02,8,0,1
+60,Red Radish,RED RADDISH,Vegetables,kg,30,S02,9,0,0
+61,Grapes Red,GRAPES RED,Fruit,kg,290,S02,10,1,1
+62,Fennel,FUNNEL,Vegetables,kg,150,S02,9,0,0
+63,Beetroot,BEETROOT,Roots & Tubers,kg,100,S02,30,0,0
+64,Celery,CERELY,Vegetables,kg,100,S02,9,0,0
+65,Baby Potato,BABY POTATO,Roots & Tubers,kg,150,S02,30,0,0
+66,Matoke,MATOKE,Roots & Tubers,kg,100,S02,30,0,0
+67,Red Chillies,RED CHILLIES,Peppers & Chillies,kg,240,S02,8,0,1
+68,Sweet Potatoes,SWEET POTATOES,Roots & Tubers,kg,80,S02,30,0,0
+69,Arrow Roots,ARROW ROOTS,Roots & Tubers,kg,130,S02,30,0,0
+70,Plantain Horn,PLATAIN HORN,Roots & Tubers,kg,200,S02,30,0,0
+71,Plantain,PLATAIN,Roots & Tubers,kg,180,S02,30,0,0
