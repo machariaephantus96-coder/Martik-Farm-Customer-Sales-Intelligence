@@ -1,0 +1,6 @@
+analysis,ratio,pct_diff,ci_low_pct,ci_high_pct,p_value,n,note
+"1 Naive: M-Pesa vs other methods, all account orders",0.6173748995842634,-38.26251004157366,-52.468101603608844,-19.811373099792263,0.0003005180426623201,11934,ignores that different customer types prefer different methods
+2 Adjusted for customer segment,0.939285889010318,-6.071411098968205,-14.635745851451231,3.3521571873186717,0.19913005562941566,11934,compares like with like by segment
+"3 Same customer, M-Pesa vs other methods (customer fixed effects)",0.9980148107405717,-0.1985189259428255,-2.0400908868147383,1.677673190437301,0.8343560145323535,11934,each customer is compared with itself
+4 Customer-level paired check (accounts with 10+ orders of each kind),0.9886774440851612,-1.1322555914838772,-3.436722065846831,1.1782315820703326,0.346431599227452,59,Wilcoxon p = 0.556
+5 Walk-in sales: M-Pesa vs cash,0.9985184650647211,-0.14815349352789164,-4.210406811233048,4.086372212730849,0.9442231989690664,8302,Mann-Whitney p = 0.7; walk-in rows are shop-level aggregates

@@ -1,0 +1,14 @@
+,value
+chi2,907.8328631069974
+dof,7
+p_value,9.769117199898954e-192
+cramers_v,0.27580995233345695
+min_expected_count,64.33986928104575
+n_invoices,11934
+customer_level_kruskal_p,4.137790108274849e-05
+customer_level_groups,7
+hotel_vs_restaurant_diff_pts,9.608496174488012
+hotel_vs_restaurant_ci,"(np.float64(8.548464549892515), np.float64(10.66852779908351))"
+hotel_vs_restaurant_customer_level_p,0.015615893932136481
+hotel_customers,7
+restaurant_customers,23
