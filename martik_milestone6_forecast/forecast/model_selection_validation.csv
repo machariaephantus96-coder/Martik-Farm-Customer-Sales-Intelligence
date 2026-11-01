@@ -1,0 +1,7 @@
+config,loss,max_depth,learning_rate,max_iter,min_samples_leaf,l2_regularization,validation_wape
+0,squared_error,3,0.05,150,20,1.0,0.14709786857591603
+3,absolute_error,3,0.05,150,20,1.0,0.15154191386772795
+4,absolute_error,4,0.05,250,20,1.0,0.16236623342480697
+1,squared_error,4,0.05,250,20,1.0,0.16357563015190765
+5,absolute_error,6,0.03,250,20,1.0,0.17113836392336115
+2,squared_error,6,0.03,250,20,1.0,0.18252474461351892
