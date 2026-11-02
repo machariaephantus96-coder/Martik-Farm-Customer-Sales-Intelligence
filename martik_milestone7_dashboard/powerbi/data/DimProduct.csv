@@ -1,0 +1,72 @@
+product_id,product_name,category,unit,base_price_jan2026_kes,source_store_id,is_imported,is_peak_season_premium
+1,Homefries,Potato Products,kg,90,S01,0,0
+2,Potatoes White,Roots & Tubers,kg,70,S02,0,0
+3,DNC Potatoes,Potato Products,kg,115,S01,0,0
+4,Wedge Potatoes,Potato Products,kg,95,S01,0,0
+5,Tomatoes,Vegetables,kg,60,S02,0,1
+6,Lyonnaise Potatoes,Potato Products,kg,100,S01,0,0
+7,Pineapples,Fruit,kg,75,S02,0,0
+8,Mushroom Punnets,Vegetables,punnet,300,S02,0,0
+9,Oranges Local,Fruit,kg,40,S02,0,1
+10,Garlic Imported (Peeled),Alliums,kg,750,S02,1,0
+11,Ginger Fresh,Herbs & Spices,kg,200,S02,0,0
+12,Apples Red,Fruit,kg,300,S02,1,0
+13,Apples Green,Fruit,kg,350,S02,1,0
+14,Onion Red (Peeled),Alliums,kg,90,S02,0,1
+15,Banana,Fruit,kg,55,S02,0,0
+16,Avocado,Fruit,kg,100,S02,0,0
+17,Watermelon,Fruit,kg,50,S02,0,0
+18,Carrots,Vegetables,kg,40,S02,0,0
+19,Red Pepper,Peppers & Chillies,kg,300,S02,0,1
+20,Yellow Pepper,Peppers & Chillies,kg,300,S02,0,1
+21,Red Bullets Chilli,Peppers & Chillies,kg,350,S02,0,1
+22,Green Chillies,Peppers & Chillies,kg,110,S02,0,1
+23,Lemon Imported,Fruit,kg,310,S02,1,0
+24,Oranges Imported,Fruit,kg,250,S02,1,1
+25,Lemon Local,Fruit,kg,80,S02,0,0
+26,Sukuma Wiki,Leafy Greens,kg,35,S02,0,0
+27,Basil,Herbs & Spices,bunch,30,S02,0,0
+28,Salad Onion,Alliums,kg,130,S02,0,0
+29,Lemon Grass,Herbs & Spices,bunch,20,S02,0,0
+30,Chives,Herbs & Spices,bunch,30,S02,0,0
+31,Cucumber,Vegetables,kg,80,S02,0,0
+32,Jalapeno,Peppers & Chillies,kg,170,S02,0,1
+33,Shelled Maize,Grains & Legumes,kg,110,S02,0,0
+34,Sweet Melon,Fruit,kg,110,S02,0,0
+35,Pawpaw,Fruit,kg,80,S02,0,0
+36,Mangoes,Fruit,kg,70,S02,0,0
+37,White Onion (Peeled),Alliums,kg,75,S02,0,1
+38,Broccoli,Vegetables,kg,130,S02,0,0
+39,Red Cabbage,Vegetables,kg,80,S02,0,0
+40,White Cabbage,Vegetables,kg,30,S02,0,0
+41,Cauliflower,Vegetables,kg,130,S02,0,0
+42,Cherry Tomatoes,Vegetables,kg,80,S02,0,1
+43,Coriander,Herbs & Spices,bunch,160,S02,0,0
+44,Eggplant,Vegetables,kg,80,S02,0,0
+45,Garden Peas,Vegetables,kg,250,S02,0,0
+46,Snow Peas,Vegetables,kg,30,S02,0,0
+47,Sugar Snaps,Vegetables,kg,30,S02,0,0
+48,Mint,Herbs & Spices,bunch,20,S02,0,0
+49,Parsley,Herbs & Spices,bunch,30,S02,0,0
+50,Baby Spinach 200g,Leafy Greens,pack,50,S02,0,0
+51,Thyme,Herbs & Spices,bunch,30,S02,0,0
+52,Rosemary,Herbs & Spices,bunch,15,S02,0,0
+53,Baby Marrow,Vegetables,kg,100,S02,0,0
+54,French Beans,Vegetables,kg,90,S02,0,0
+55,Sweetcorn,Vegetables,kg,180,S02,0,0
+56,Passion Fruits,Fruit,kg,220,S02,0,0
+57,Butternuts,Vegetables,kg,90,S02,0,0
+58,Sage,Herbs & Spices,bunch,30,S02,0,0
+59,Green Pepper,Peppers & Chillies,kg,100,S02,0,1
+60,Red Radish,Vegetables,kg,30,S02,0,0
+61,Grapes Red,Fruit,kg,290,S02,1,1
+62,Fennel,Vegetables,kg,150,S02,0,0
+63,Beetroot,Roots & Tubers,kg,100,S02,0,0
+64,Celery,Vegetables,kg,100,S02,0,0
+65,Baby Potato,Roots & Tubers,kg,150,S02,0,0
+66,Matoke,Roots & Tubers,kg,100,S02,0,0
+67,Red Chillies,Peppers & Chillies,kg,240,S02,0,1
+68,Sweet Potatoes,Roots & Tubers,kg,80,S02,0,0
+69,Arrow Roots,Roots & Tubers,kg,130,S02,0,0
+70,Plantain Horn,Roots & Tubers,kg,200,S02,0,0
+71,Plantain,Roots & Tubers,kg,180,S02,0,0

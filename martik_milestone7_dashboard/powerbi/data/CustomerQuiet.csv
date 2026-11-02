@@ -1,0 +1,19 @@
+customer_id,segment,orders,last_order,days_silent,avg_gap_days,median_gap_days,silence_vs_normal_gap,status,customer_label
+C121,Restaurant,30,2024-12-06,663,2.2,2.0,331.5,lapsed: win-back or write off,C121 Restaurant
+C156,Grocer/Supermarket,72,2025-11-19,315,1.9,1.0,315.0,lapsed: win-back or write off,C156 Grocer/Supermarket
+C116,Restaurant,76,2025-05-21,497,3.1,2.0,248.5,lapsed: win-back or write off,C116 Restaurant
+C146,Caterer,83,2025-07-09,448,3.3,2.0,224.0,lapsed: win-back or write off,C146 Caterer
+C138,Hotel/Lodge,106,2025-08-31,395,3.2,2.0,197.5,lapsed: win-back or write off,C138 Hotel/Lodge
+C104,Restaurant,38,2025-03-01,578,4.1,3.0,192.7,lapsed: win-back or write off,C104 Restaurant
+C162,Fast Food,18,2025-01-11,627,5.9,5.0,125.4,lapsed: win-back or write off,C162 Fast Food
+C133,Hotel/Lodge,541,2026-06-03,119,1.1,1.0,119.0,recently quiet: call now,C133 Hotel/Lodge
+C124,Cafe/Bakery,60,2025-09-24,371,6.1,4.0,92.8,lapsed: win-back or write off,C124 Cafe/Bakery
+C164,Fast Food,170,2026-04-15,168,2.3,2.0,84.0,lapsed: win-back or write off,C164 Fast Food
+C147,Caterer,41,2025-11-12,322,5.9,4.0,80.5,lapsed: win-back or write off,C147 Caterer
+C160,Grocer/Supermarket,139,2026-04-24,159,3.2,2.0,79.5,lapsed: win-back or write off,C160 Grocer/Supermarket
+C142,Caterer,44,2026-02-25,217,5.0,3.0,72.3,lapsed: win-back or write off,C142 Caterer
+C105,Restaurant,274,2026-06-20,102,2.3,2.0,51.0,recently quiet: call now,C105 Restaurant
+C145,Caterer,125,2026-05-08,145,4.6,3.0,48.3,recently quiet: call now,C145 Caterer
+C109,Restaurant,32,2026-01-17,256,7.7,6.0,42.7,lapsed: win-back or write off,C109 Restaurant
+C135,Hotel/Lodge,56,2026-07-09,83,2.3,2.0,41.5,recently quiet: call now,C135 Hotel/Lodge
+C128,Cafe/Bakery,101,2026-04-23,160,5.7,4.0,40.0,lapsed: win-back or write off,C128 Cafe/Bakery

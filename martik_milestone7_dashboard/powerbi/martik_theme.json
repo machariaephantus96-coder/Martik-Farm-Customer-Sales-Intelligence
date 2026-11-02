@@ -1,0 +1,13 @@
+{
+  "name": "Martik Farm",
+  "dataColors": ["#2A78D6", "#D9561F", "#13946A", "#9AA6B0", "#B7791F", "#51606C", "#5AA0EE", "#F08A5D"],
+  "background": "#FFFFFF",
+  "foreground": "#13202B",
+  "tableAccent": "#2A78D6",
+  "good": "#13946A",
+  "neutral": "#B7791F",
+  "bad": "#C0392B",
+  "maximum": "#2A78D6",
+  "center": "#E8EDF1",
+  "minimum": "#9AA6B0"
+}

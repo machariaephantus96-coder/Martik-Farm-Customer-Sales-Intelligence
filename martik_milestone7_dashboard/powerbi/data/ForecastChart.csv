@@ -1,0 +1,145 @@
+week_start,category,kind,actual_units,forecast_units,low80,high80,same_week_last_year
+2026-06-22,Alliums,Actual,535.5,,,,442.0
+2026-06-29,Alliums,Actual,469.5,,,,488.5
+2026-07-06,Alliums,Actual,563.5,,,,498.0
+2026-07-13,Alliums,Actual,510.5,,,,444.5
+2026-07-20,Alliums,Actual,568.0,,,,597.5
+2026-07-27,Alliums,Actual,557.0,,,,502.0
+2026-08-03,Alliums,Actual,465.0,,,,464.0
+2026-08-10,Alliums,Actual,507.5,,,,528.0
+2026-08-17,Alliums,Actual,565.5,,,,477.5
+2026-08-24,Alliums,Actual,570.5,,,,609.0
+2026-08-31,Alliums,Actual,692.5,,,,613.0
+2026-09-07,Alliums,Actual,743.5,,,,679.5
+2026-09-14,Alliums,Actual,591.5,,,,642.0
+2026-09-21,Alliums,Actual,654.0,,,,599.5
+2026-09-28,Alliums,Forecast,,777.0,614.0,921.0,763.5
+2026-10-05,Alliums,Forecast,,802.0,634.0,950.0,790.0
+2026-10-12,Alliums,Forecast,,828.0,655.0,981.0,836.0
+2026-10-19,Alliums,Forecast,,741.0,586.0,878.0,687.5
+2026-06-22,Fruit,Actual,887.0,,,,965.5
+2026-06-29,Fruit,Actual,950.0,,,,994.0
+2026-07-06,Fruit,Actual,1107.0,,,,935.5
+2026-07-13,Fruit,Actual,931.0,,,,908.0
+2026-07-20,Fruit,Actual,1072.0,,,,1089.0
+2026-07-27,Fruit,Actual,1069.0,,,,1336.5
+2026-08-03,Fruit,Actual,1033.5,,,,999.0
+2026-08-10,Fruit,Actual,988.0,,,,1046.0
+2026-08-17,Fruit,Actual,1002.0,,,,902.5
+2026-08-24,Fruit,Actual,1072.5,,,,1167.0
+2026-08-31,Fruit,Actual,1338.5,,,,1195.0
+2026-09-07,Fruit,Actual,1412.0,,,,1442.5
+2026-09-14,Fruit,Actual,1211.5,,,,1326.5
+2026-09-21,Fruit,Actual,1095.5,,,,1234.0
+2026-09-28,Fruit,Forecast,,1421.0,1124.0,1685.0,1444.5
+2026-10-05,Fruit,Forecast,,1506.0,1191.0,1785.0,1558.5
+2026-10-12,Fruit,Forecast,,1471.0,1164.0,1744.0,1479.5
+2026-10-19,Fruit,Forecast,,1417.0,1121.0,1680.0,1406.5
+2026-06-22,Herbs & Spices,Actual,438.0,,,,289.0
+2026-06-29,Herbs & Spices,Actual,383.5,,,,318.0
+2026-07-06,Herbs & Spices,Actual,421.0,,,,273.0
+2026-07-13,Herbs & Spices,Actual,360.0,,,,320.0
+2026-07-20,Herbs & Spices,Actual,393.5,,,,389.5
+2026-07-27,Herbs & Spices,Actual,425.0,,,,427.5
+2026-08-03,Herbs & Spices,Actual,364.0,,,,369.0
+2026-08-10,Herbs & Spices,Actual,380.0,,,,298.0
+2026-08-17,Herbs & Spices,Actual,360.0,,,,346.5
+2026-08-24,Herbs & Spices,Actual,491.5,,,,423.5
+2026-08-31,Herbs & Spices,Actual,468.5,,,,474.5
+2026-09-07,Herbs & Spices,Actual,480.5,,,,499.5
+2026-09-14,Herbs & Spices,Actual,493.5,,,,406.0
+2026-09-21,Herbs & Spices,Actual,505.5,,,,439.5
+2026-09-28,Herbs & Spices,Forecast,,554.0,438.0,657.0,502.0
+2026-10-05,Herbs & Spices,Forecast,,594.0,470.0,704.0,562.0
+2026-10-12,Herbs & Spices,Forecast,,558.0,441.0,661.0,493.0
+2026-10-19,Herbs & Spices,Forecast,,569.0,450.0,675.0,525.0
+2026-06-22,Leafy Greens,Actual,187.0,,,,182.0
+2026-06-29,Leafy Greens,Actual,214.0,,,,186.5
+2026-07-06,Leafy Greens,Actual,200.5,,,,242.5
+2026-07-13,Leafy Greens,Actual,160.5,,,,137.0
+2026-07-20,Leafy Greens,Actual,191.0,,,,184.0
+2026-07-27,Leafy Greens,Actual,212.0,,,,245.5
+2026-08-03,Leafy Greens,Actual,127.0,,,,177.0
+2026-08-10,Leafy Greens,Actual,121.5,,,,150.0
+2026-08-17,Leafy Greens,Actual,108.5,,,,137.5
+2026-08-24,Leafy Greens,Actual,179.0,,,,227.0
+2026-08-31,Leafy Greens,Actual,264.5,,,,173.5
+2026-09-07,Leafy Greens,Actual,240.5,,,,183.5
+2026-09-14,Leafy Greens,Actual,264.5,,,,207.5
+2026-09-21,Leafy Greens,Actual,168.0,,,,264.0
+2026-09-28,Leafy Greens,Forecast,,258.0,204.0,306.0,280.5
+2026-10-05,Leafy Greens,Forecast,,244.0,193.0,289.0,248.0
+2026-10-12,Leafy Greens,Forecast,,248.0,196.0,294.0,256.0
+2026-10-19,Leafy Greens,Forecast,,268.0,212.0,317.0,302.0
+2026-06-22,Peppers & Chillies,Actual,306.0,,,,294.5
+2026-06-29,Peppers & Chillies,Actual,289.0,,,,283.5
+2026-07-06,Peppers & Chillies,Actual,325.0,,,,312.5
+2026-07-13,Peppers & Chillies,Actual,302.0,,,,272.5
+2026-07-20,Peppers & Chillies,Actual,270.0,,,,315.0
+2026-07-27,Peppers & Chillies,Actual,332.5,,,,341.0
+2026-08-03,Peppers & Chillies,Actual,301.0,,,,322.0
+2026-08-10,Peppers & Chillies,Actual,341.0,,,,321.0
+2026-08-17,Peppers & Chillies,Actual,323.5,,,,322.5
+2026-08-24,Peppers & Chillies,Actual,314.0,,,,335.0
+2026-08-31,Peppers & Chillies,Actual,398.0,,,,400.5
+2026-09-07,Peppers & Chillies,Actual,432.0,,,,422.5
+2026-09-14,Peppers & Chillies,Actual,421.5,,,,401.0
+2026-09-21,Peppers & Chillies,Actual,376.5,,,,414.0
+2026-09-28,Peppers & Chillies,Forecast,,444.0,351.0,526.0,431.5
+2026-10-05,Peppers & Chillies,Forecast,,460.0,364.0,546.0,454.5
+2026-10-12,Peppers & Chillies,Forecast,,473.0,374.0,561.0,478.0
+2026-10-19,Peppers & Chillies,Forecast,,463.0,367.0,549.0,470.5
+2026-06-22,Potato Products,Actual,1324.5,,,,928.5
+2026-06-29,Potato Products,Actual,1267.5,,,,1078.0
+2026-07-06,Potato Products,Actual,1182.5,,,,1035.5
+2026-07-13,Potato Products,Actual,1001.0,,,,930.5
+2026-07-20,Potato Products,Actual,1218.5,,,,1208.5
+2026-07-27,Potato Products,Actual,1284.5,,,,1108.5
+2026-08-03,Potato Products,Actual,1071.5,,,,928.0
+2026-08-10,Potato Products,Actual,841.5,,,,1000.5
+2026-08-17,Potato Products,Actual,871.0,,,,951.5
+2026-08-24,Potato Products,Actual,1264.5,,,,1318.0
+2026-08-31,Potato Products,Actual,1410.0,,,,1370.5
+2026-09-07,Potato Products,Actual,1424.5,,,,1368.0
+2026-09-14,Potato Products,Actual,1582.0,,,,1406.5
+2026-09-21,Potato Products,Actual,1373.0,,,,1415.0
+2026-09-28,Potato Products,Forecast,,1543.0,1221.0,1829.0,1470.5
+2026-10-05,Potato Products,Forecast,,1731.0,1369.0,2052.0,1778.0
+2026-10-12,Potato Products,Forecast,,1885.0,1491.0,2234.0,2074.0
+2026-10-19,Potato Products,Forecast,,1803.0,1426.0,2137.0,1953.0
+2026-06-22,Roots & Tubers,Actual,850.0,,,,690.0
+2026-06-29,Roots & Tubers,Actual,847.0,,,,751.5
+2026-07-06,Roots & Tubers,Actual,1051.0,,,,807.0
+2026-07-13,Roots & Tubers,Actual,874.5,,,,695.0
+2026-07-20,Roots & Tubers,Actual,788.5,,,,868.0
+2026-07-27,Roots & Tubers,Actual,941.0,,,,733.0
+2026-08-03,Roots & Tubers,Actual,626.0,,,,658.0
+2026-08-10,Roots & Tubers,Actual,569.5,,,,689.5
+2026-08-17,Roots & Tubers,Actual,546.0,,,,627.5
+2026-08-24,Roots & Tubers,Actual,856.0,,,,1119.0
+2026-08-31,Roots & Tubers,Actual,694.0,,,,1106.0
+2026-09-07,Roots & Tubers,Actual,1059.0,,,,1104.0
+2026-09-14,Roots & Tubers,Actual,1100.0,,,,935.0
+2026-09-21,Roots & Tubers,Actual,811.5,,,,1003.0
+2026-09-28,Roots & Tubers,Forecast,,1028.0,813.0,1219.0,1155.0
+2026-10-05,Roots & Tubers,Forecast,,1092.0,863.0,1294.0,1276.0
+2026-10-12,Roots & Tubers,Forecast,,1079.0,853.0,1278.0,1245.5
+2026-10-19,Roots & Tubers,Forecast,,954.0,754.0,1130.0,996.0
+2026-06-22,Vegetables,Actual,1197.0,,,,1393.5
+2026-06-29,Vegetables,Actual,1540.5,,,,1445.5
+2026-07-06,Vegetables,Actual,1434.0,,,,1419.0
+2026-07-13,Vegetables,Actual,1364.5,,,,1341.5
+2026-07-20,Vegetables,Actual,1284.5,,,,1501.0
+2026-07-27,Vegetables,Actual,1402.0,,,,1718.0
+2026-08-03,Vegetables,Actual,1350.0,,,,1349.5
+2026-08-10,Vegetables,Actual,1296.5,,,,1374.0
+2026-08-17,Vegetables,Actual,1500.5,,,,1392.0
+2026-08-24,Vegetables,Actual,1302.5,,,,1610.5
+2026-08-31,Vegetables,Actual,1731.5,,,,1672.0
+2026-09-07,Vegetables,Actual,1910.5,,,,1861.5
+2026-09-14,Vegetables,Actual,1801.0,,,,1652.5
+2026-09-21,Vegetables,Actual,1711.0,,,,1730.0
+2026-09-28,Vegetables,Forecast,,2072.0,1639.0,2455.0,2149.5
+2026-10-05,Vegetables,Forecast,,2053.0,1624.0,2434.0,2043.5
+2026-10-12,Vegetables,Forecast,,2105.0,1665.0,2495.0,2112.5
+2026-10-19,Vegetables,Forecast,,2092.0,1655.0,2480.0,2131.5

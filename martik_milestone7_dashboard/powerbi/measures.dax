@@ -1,0 +1,57 @@
+// Martik Farm dashboard: DAX measures. Create a table "_Measures" (Home > Enter data, one empty column) and add each measure to it.
+// Not run in Power BI from this environment: paste them in and check each one returns a sensible number (see BUILD_GUIDE.md, section 5).
+
+// ---------- Sales
+Revenue          = SUM ( FactSales[line_total_kes] )
+Gross Margin     = SUM ( FactSales[gross_margin_kes] )
+Margin %         = DIVIDE ( [Gross Margin], [Revenue] )
+Orders           = DISTINCTCOUNT ( FactSales[order_id] )
+Average Order    = DIVIDE ( [Revenue], [Orders] )
+Units Sold       = SUM ( FactSales[billed_qty] )
+
+Revenue LY       = CALCULATE ( [Revenue], SAMEPERIODLASTYEAR ( DimDate[date] ) )
+Revenue YoY %    = DIVIDE ( [Revenue] - [Revenue LY], [Revenue LY] )
+Revenue MoM %    =
+VAR prev = CALCULATE ( [Revenue], DATEADD ( DimDate[date], -1, MONTH ) )
+RETURN DIVIDE ( [Revenue] - prev, prev )
+
+Segment Share %  = DIVIDE ( [Revenue], CALCULATE ( [Revenue], ALLSELECTED ( DimCustomer[segment] ) ) )
+Category Share % = DIVIDE ( [Revenue], CALCULATE ( [Revenue], ALLSELECTED ( DimProduct[category] ) ) )
+
+// Colour for the monthly column chart: orange for the Oct-Dec peak, blue otherwise (use in Format > Columns > fx > Field value)
+Bar Colour       = IF ( MAX ( DimDate[month] ) >= 10, "#D9561F", "#2A78D6" )
+
+// Peak against low season (weekly averages; the first and last week of the data are partial)
+Peak Weekly Revenue = CALCULATE ( AVERAGEX ( VALUES ( DimDate[week_start] ), [Revenue] ), DimDate[business_season] = "Peak" )
+Low Weekly Revenue  = CALCULATE ( AVERAGEX ( VALUES ( DimDate[week_start] ), [Revenue] ), DimDate[business_season] = "Low" )
+Peak vs Low Ratio   = DIVIDE ( [Peak Weekly Revenue], [Low Weekly Revenue] )
+
+// ---------- Customers (these use FactOrders, which has no store, so the Store slicer does not change them)
+Active Accounts = CALCULATE ( DISTINCTCOUNT ( FactOrders[customer_id] ), DimCustomer[is_account] = 1 )
+Avg Monthly Active Accounts = AVERAGEX ( VALUES ( DimDate[month_start] ), [Active Accounts] )
+
+// ---------- Credit
+Unpaid Invoices KES = CALCULATE ( SUM ( FactOrders[order_total_kes] ), FactOrders[payment_status] IN { "Open", "Overdue" }, DimCustomer[is_account] = 1 )
+Overdue KES         = CALCULATE ( SUM ( FactOrders[order_total_kes] ), FactOrders[payment_status] = "Overdue", DimCustomer[is_account] = 1 )
+Overdue Invoices    = CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[payment_status] = "Overdue", DimCustomer[is_account] = 1 )
+Written Off KES     = CALCULATE ( SUM ( FactOrders[order_total_kes] ), FactOrders[payment_status] = "Written Off", DimCustomer[is_account] = 1 )
+Paid Invoices       = CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[payment_status] = "Paid", DimCustomer[is_account] = 1 )
+Paid Late Invoices  = CALCULATE ( COUNTROWS ( FactOrders ), FactOrders[payment_status] = "Paid", FactOrders[days_past_due] > 0, DimCustomer[is_account] = 1 )
+Late Payment %      = DIVIDE ( [Paid Late Invoices], [Paid Invoices] )
+Avg Days Past Due   = CALCULATE ( AVERAGE ( FactOrders[days_past_due] ), FactOrders[payment_status] = "Paid", DimCustomer[is_account] = 1 )
+Over Credit Limit Accounts = CALCULATE ( DISTINCTCOUNT ( CreditExposure[customer_id] ), CreditExposure[pct_of_credit_limit] > 100 )
+
+// ---------- RFM and quiet accounts
+RFM Accounts      = DISTINCTCOUNT ( CustomerRFM[customer_id] )
+RFM Revenue Share = DIVIDE ( SUM ( CustomerRFM[monetary_kes] ), CALCULATE ( SUM ( CustomerRFM[monetary_kes] ), ALL ( CustomerRFM[rfm_segment] ) ) )
+Quiet Accounts    = CALCULATE ( DISTINCTCOUNT ( CustomerQuiet[customer_id] ), CustomerQuiet[status] = "recently quiet: call now" )
+
+// ---------- Forecast (table ForecastChart: 14 weeks of actuals then 4 weeks of forecast, per category)
+Actual Units        = SUM ( ForecastChart[actual_units] )
+Forecast Units      = SUM ( ForecastChart[forecast_units] )
+Forecast Low 80     = SUM ( ForecastChart[low80] )
+Forecast High 80    = SUM ( ForecastChart[high80] )
+Same Week LY Units  = SUM ( ForecastChart[same_week_last_year] )
+Forecast Weekly Avg = CALCULATE ( AVERAGEX ( VALUES ( ForecastChart[week_start] ), [Forecast Units] ), ForecastChart[kind] = "Forecast" )
+Forecast Test WAPE  = CALCULATE ( MAX ( ForecastAccuracy[wape] ), ForecastAccuracy[split] = "test", ForecastAccuracy[method] = "blend" )
+Avg4 Test WAPE      = CALCULATE ( MAX ( ForecastAccuracy[wape] ), ForecastAccuracy[split] = "test", ForecastAccuracy[method] = "b2_avg4" )

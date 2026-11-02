@@ -1,0 +1,336 @@
+<title>Martik Store Dashboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one scrolling manager's page. Filter bar, KPI strip, then four question-led sections, then the insights in words. */
+:root{
+  --bg:#f2f5f7; --surface:#ffffff; --ink:#13202b; --ink2:#51606c; --line:#dde3e8; --grid:#e8edf1;
+  --blue:#2a78d6; --orange:#d9561f; --aqua:#13946a; --grey:#9aa6b0; --band:#e6f0fb;
+  --good:#13946a; --warn:#b7791f; --bad:#c0392b; --chip:#e9eef2;
+  --f-body:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif; --f-num:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f161c; --surface:#18222b; --ink:#e8eef3; --ink2:#a0afbb; --line:#2a3743; --grid:#233039;
+  --blue:#5aa0ee; --orange:#f08a5d; --aqua:#3cc496; --grey:#6f7d89; --band:#1c3045;
+  --good:#3cc496; --warn:#e0a94a; --bad:#ef7a6c; --chip:#22303b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f161c; --surface:#18222b; --ink:#e8eef3; --ink2:#a0afbb; --line:#2a3743; --grid:#233039;
+  --blue:#5aa0ee; --orange:#f08a5d; --aqua:#3cc496; --grey:#6f7d89; --band:#1c3045;
+  --good:#3cc496; --warn:#e0a94a; --bad:#ef7a6c; --chip:#22303b; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1{font-size:26px;line-height:1.15;margin:0;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:17px;margin:0;font-weight:650;text-wrap:balance}
+h3{font-size:13px;margin:0 0 8px;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+header{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between}
+header p{margin:0;color:var(--ink2);max-width:60ch}
+.banner{background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:8px 12px;color:var(--ink2);font-size:12.5px}
+.filters{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.filters label{display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em;min-width:0}
+select{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-width:160px;max-width:100%}
+select:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.kpi .l{font-size:11.5px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.kpi .v{font-family:var(--f-num);font-size:24px;font-weight:500;margin-top:2px;font-variant-numeric:tabular-nums}
+.kpi .d{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.d.up{color:var(--good)} .d.down{color:var(--bad)}
+.kpi.static{border-style:dashed}
+.sub{font-size:12px;color:var(--ink2);margin:-6px 0 0}
+section{display:flex;flex-direction:column;gap:12px}
+.sechead{display:flex;flex-direction:column;gap:2px}
+.sechead p{margin:0;color:var(--ink2)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;min-width:0}
+.card .headline{font-weight:600;margin:0 0 8px;text-wrap:balance}
+.chart{width:100%;min-height:120px}
+svg text{font-family:var(--f-body);fill:var(--ink2);font-size:11px}
+svg .lbl{fill:var(--ink)} svg .num{font-family:var(--f-num)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{text-align:left;font-weight:600;color:var(--ink2);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:6px 8px;border-bottom:1px solid var(--grid);vertical-align:middle}
+th.r,td.r{text-align:right}
+.scroll{overflow-x:auto}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:600;background:var(--chip);color:var(--ink2)}
+.pill.bad{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad)}
+.pill.warn{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.pill.good{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ink2);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px}
+.insight{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;min-width:0}
+.insight b{display:block;margin-bottom:4px;text-wrap:balance}
+.insight p{margin:0;color:var(--ink2)}
+.insight .act{margin-top:8px;color:var(--ink)}
+.qa td:first-child{width:44%}
+footer{color:var(--ink2);font-size:12.5px;display:flex;flex-direction:column;gap:4px}
+@media (max-width:520px){h1{font-size:22px}.kpi .v{font-size:21px}select{min-width:0;width:100%}.filters label{flex:1 1 100%}}
+@media (prefers-reduced-motion:no-preference){.bar{transition:opacity .15s}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div><h1>Martik Farm Store Dashboard</h1>
+      <p>Sales, margin, customers, credit and next month's demand for Ruiru and Nairobi CBD. Data runs 1 Oct 2024 to 30 Sep 2026.</p></div>
+  </header>
+  <div class="banner"><b>Synthetic data.</b> The sales records are generated for a capstone, calibrated on Martik's real price list. Accounts appear as ID and segment (for example C101 Restaurant). Figures describe the simulated business.</div>
+
+  <div class="filters" role="group" aria-label="Filters">
+    <label for="fPeriod">Period<select id="fPeriod"><option value="24">All 24 months</option><option value="12" selected>Last 12 months</option><option value="6">Last 6 months</option><option value="3">Last 3 months</option></select></label>
+    <label for="fStore">Store<select id="fStore"><option value="all">Both stores</option><option value="S01">Ruiru (potato products)</option><option value="S02">Nairobi CBD (grocery)</option></select></label>
+    <label for="fSeg">Customer segment<select id="fSeg"></select></label>
+    <span class="sub" id="fNote" style="margin:0;align-self:center"></span>
+  </div>
+
+  <div class="kpis" id="kpis" aria-live="polite"></div>
+  <div class="kpis" id="kpis2"></div>
+
+  <section>
+    <div class="sechead"><h2>How are sales going?</h2><p>Monthly revenue and margin for the filters above. Orange months are the Oct to Dec peak.</p></div>
+    <div class="grid2">
+      <div class="card"><p class="headline" id="hTrend"></p><div class="chart" id="cTrend"></div>
+        <div class="legend"><span><i style="background:var(--blue)"></i>Other months</span><span><i style="background:var(--orange)"></i>Peak season (Oct to Dec)</span></div></div>
+      <div class="card"><p class="headline" id="hMargin"></p><div class="chart" id="cMargin"></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Who and what brings the money?</h2><p>Share of revenue by customer segment and by product category, with gross margin.</p></div>
+    <div class="grid2">
+      <div class="card"><p class="headline" id="hSeg"></p><div class="chart" id="cSeg"></div></div>
+      <div class="card"><p class="headline" id="hCat"></p><div class="chart" id="cCat"></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>What demand should we prepare for?</h2><p>Weekly units for the next four weeks, from the Milestone 6 model blended with last year's pattern. Not affected by the filters.</p></div>
+    <div class="card">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:end;justify-content:space-between;margin-bottom:8px">
+        <p class="headline" id="hFc" style="margin:0"></p>
+        <label for="fCat" style="display:flex;flex-direction:column;gap:3px;font-size:11.5px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em">Category<select id="fCat"></select></label>
+      </div>
+      <div class="chart" id="cFc"></div>
+      <div class="legend"><span><i style="background:var(--ink)"></i>Actual</span><span><i style="background:var(--blue)"></i>Forecast</span><span><i style="background:var(--band);border:1px solid var(--blue)"></i>80% range</span><span><i style="background:var(--grey);border-radius:50%"></i>Same week last year</span></div>
+      <div class="scroll" style="margin-top:10px"><table id="tFc"></table></div>
+      <p class="sub" id="fcNote" style="margin-top:8px"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Who owes us money, and who is drifting away?</h2><p>As at 30 Sep 2026, all stores. Not affected by the filters.</p></div>
+    <div class="grid2">
+      <div class="card"><h3>Largest unpaid balances</h3><div class="scroll"><table id="tCredit"></table></div></div>
+      <div class="card"><p class="headline" id="hLate"></p><div class="chart" id="cLate"></div></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>Customer groups (RFM)</h3><div class="scroll"><table id="tRfm"></table></div></div>
+      <div class="card"><h3>Gone quiet: call these first</h3><div class="scroll"><table id="tRisk"></table></div>
+        <p class="sub" style="margin-top:8px">Quiet means no order for more than three times the account's usual gap between orders, for 30 to 150 days. Longer than that is a lapsed account. Schools go quiet in school holidays, so check the term calendar before calling. The group "At risk" in the table on the left is a relative score: most accounts order almost daily, so some At-risk accounts are only days behind.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>What this means for the store</h2><p>Findings from Milestones 3 to 6, for the whole period Oct 2024 to Sep 2026. Each one can be checked in the matching milestone folder.</p></div>
+    <div class="insights">
+      <div class="insight"><b>Stock up for October to December</b><p>Peak weeks earn about 1.76 times low-season weeks (interval 1.67 to 1.86). December 2025 was the best month at KES 5.16 million, and January falls about 50% from December every year.</p><p class="act">Plan stock, cash and delivery staff for the peak by the end of September.</p></div>
+      <div class="insight"><b>A few accounts carry the business</b><p>The largest account (C001 Coffee Chain) is 16.9% of account revenue and the top seven accounts are 52.7%. Hotels (24%) and restaurants (23%) are the biggest segments.</p><p class="act">Protect these relationships; losing one hotel would be felt in the weekly totals.</p></div>
+      <div class="insight"><b>Fruit leads in town, fries lead in Ruiru</b><p>CBD fruit is 20.4% of revenue. Ruiru potato products are 16.7% at a 30.2% margin. Cucumber, matoke, white onion, lemon and coriander are top sellers in their category but earn less margin than the category average.</p><p class="act">Review the price of those five lines first.</p></div>
+      <div class="insight"><b>Credit is the biggest risk</b><p>KES 3.95 million is unpaid, of which KES 852,000 is overdue across 147 invoices, and KES 56,000 is written off. Hotels and schools pay after the due date 99% of the time, about 14 to 16 days late. Seven accounts owe more than their credit limit, the worst being C101 Restaurant (169%), C150 School (163%) and C111 Restaurant (142%).</p><p class="act">Chase hotels and schools first, and stop new credit to accounts over their limit.</p></div>
+      <div class="insight"><b>Four active accounts have gone quiet</b><p>16 Champions bring 55% of revenue. Four accounts that used to order every few days have not ordered for 83 to 145 days: C133 Hotel (KES 6.0M to date), C105 Restaurant, C145 Caterer and C135 Hotel. Another 14 have been quiet longer and are probably lost.</p><p class="act">Call the four accounts in the Gone quiet table this week.</p></div>
+      <div class="insight"><b>M-Pesa does not change how much customers order</b><p>M-Pesa orders look 38% smaller, but only because small shops use M-Pesa and hotels use bank transfer. The same customer orders the same amount either way.</p><p class="act">Offer M-Pesa for convenience; do not expect bigger orders from it.</p></div>
+      <div class="insight"><b>Discounts: only January fruit looks useful</b><p>The two January fruit promotions raised fruit sales by about 17 to 23%, but no promotion passes a strict test. The other three cannot be called a success or a failure.</p><p class="act">Next time, run a promotion on a random half of accounts so the other half is a fair comparison.</p></div>
+      <div class="insight"><b>Trust the forecast, but not blindly in the peak</b><p>On test weeks the forecast is off by about 12% (WAPE), against 17% for a 4-week average. In the Oct 2025 peak the model alone under-forecast by 14%, so the page shows a blend with last year's pattern.</p><p class="act">Plan for the forecast and be ready for the top of its 80% range.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>Questions this dashboard answers</h2></div>
+    <div class="card scroll"><table class="qa"><thead><tr><th>Question a store manager asks</th><th>Where to look</th></tr></thead><tbody>
+      <tr><td>How much did we sell, at what margin, and is it up or down?</td><td>KPI strip and the monthly trend</td></tr>
+      <tr><td>Is the Oct to Dec peak coming, and how big is it?</td><td>Trend chart (orange months), insight 1, forecast</td></tr>
+      <tr><td>Which customer types and which products make the money?</td><td>Segment and category charts</td></tr>
+      <tr><td>How do Ruiru and the CBD shop compare?</td><td>Store filter, applied to every chart</td></tr>
+      <tr><td>How many units should we prepare for the next four weeks?</td><td>Forecast chart and table, by category</td></tr>
+      <tr><td>Who owes us, and who pays late?</td><td>Unpaid balances table, late-payment chart</td></tr>
+      <tr><td>Which good customers are drifting away?</td><td>Customer groups and the Gone quiet list</td></tr>
+      <tr><td>Did discounts and M-Pesa change sales?</td><td>Insights 6 and 7</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <footer>
+    <span>Sources: cleaned Martik data (Milestone 2), SQL results (4), statistical tests (5), forecast model (6). Revenue is billed value after discounts and rejections; margin is revenue less cost of goods; units are billed quantity (kg or bunches).</span>
+    <span>The forecast calendar for October 2026 is copied from the same weeks of 2025. Check October 2026 public holidays.</span>
+  </footer>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+const $ = id => document.getElementById(id);
+const STORES = {S01: 'Ruiru', S02: 'Nairobi CBD'};
+const fmtM = v => 'KES ' + (v / 1e6).toFixed(2) + 'M';
+const fmtK = v => v >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : Math.round(v / 1e3) + 'k';
+const fmtN = v => Math.round(v).toLocaleString('en-US');
+const mlabel = m => { const [y, mo] = m.split('-'); return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+mo - 1] + " '" + y.slice(2); };
+const isPeak = m => +m.slice(5) >= 10;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ---- filters
+const segSel = $('fSeg'); segSel.innerHTML = '<option value="all">All segments</option>' + D.segments.map(s => `<option>${esc(s)}</option>`).join('');
+const catSel = $('fCat'); catSel.innerHTML = '<option value="all">All categories</option>' + D.forecast.cats.map(s => `<option>${esc(s)}</option>`).join('');
+['fPeriod','fStore','fSeg'].forEach(id => $(id).addEventListener('change', render));
+catSel.addEventListener('change', drawForecast);
+
+function state() {
+  const n = +$('fPeriod').value, months = D.months, k = months.length;
+  const cur = months.slice(k - n), prev = k - 2 * n >= 0 ? months.slice(k - 2 * n, k - n) : null;
+  return {n, cur, prev, store: $('fStore').value, seg: $('fSeg').value};
+}
+function agg(months, store, seg) {
+  const ms = new Set(months); let rev = 0, gm = 0, orders = 0, accSum = 0;
+  const bySeg = {}, byCat = {}, byMonth = {};
+  for (const [m, sg, st, cat, r, g] of D.F) {
+    if (!ms.has(m) || (store !== 'all' && st !== store)) continue;
+    bySeg[sg] = bySeg[sg] || {rev: 0, gm: 0}; bySeg[sg].rev += r; bySeg[sg].gm += g;
+    if (seg !== 'all' && sg !== seg) continue;
+    rev += r; gm += g;
+    byCat[cat] = byCat[cat] || {rev: 0, gm: 0}; byCat[cat].rev += r; byCat[cat].gm += g;
+    byMonth[m] = byMonth[m] || {rev: 0, gm: 0, orders: 0}; byMonth[m].rev += r; byMonth[m].gm += g;
+  }
+  if (store === 'all') { for (const [m, sg, o, a] of D.Oa) if (ms.has(m) && (seg === 'all' || sg === seg)) { orders += o; accSum += a; } }
+  else { for (const [m, sg, st, o] of D.Os) if (ms.has(m) && st === store && (seg === 'all' || sg === seg)) orders += o; }
+  return {rev, gm, orders, accounts: store === 'all' ? accSum / months.length : null, bySeg, byCat, byMonth};
+}
+
+// ---- svg helpers (drawn at the container's real width so text stays readable on phones)
+function niceMax(v) { const p = Math.pow(10, Math.floor(Math.log10(v || 1))); const f = v / p; return ([1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].find(x => f <= x + 1e-9)) * p; }
+function columns(el, items, o) {
+  const w = Math.max(el.clientWidth, 260), h = o.h || 230, L = 42, R = 8, T = 14, B = 26, iw = w - L - R, ih = h - T - B;
+  const max = niceMax(Math.max(...items.map(i => i.v), 1)), bw = iw / items.length;
+  let s = `<svg width="${w}" height="${h}" role="img" aria-label="${esc(o.aria)}">`;
+  for (let t = 0; t <= 3; t++) { const y = T + ih - ih * t / 3; s += `<line x1="${L}" x2="${w - R}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${L - 6}" y="${y + 4}" text-anchor="end">${o.y(max * t / 3)}</text>`; }
+  const every = Math.ceil(items.length / Math.floor(iw / 44));
+  const maxI = items.reduce((a, b, i) => b.v > items[a].v ? i : a, 0);
+  items.forEach((it, i) => {
+    const bh = ih * it.v / max, x = L + i * bw + bw * .14, y = T + ih - bh;
+    s += `<rect class="bar" x="${x}" y="${y}" width="${bw * .72}" height="${Math.max(bh, 0)}" rx="2" fill="${it.c}"><title>${esc(it.t)}</title></rect>`;
+    if (i % every === 0 || i === items.length - 1) s += `<text x="${x + bw * .36}" y="${h - 8}" text-anchor="middle">${esc(it.l)}</text>`;
+    if (i === maxI || i === items.length - 1) s += `<text class="lbl num" x="${x + bw * .36}" y="${y - 4}" text-anchor="middle">${o.y(it.v)}</text>`;
+  });
+  el.innerHTML = s + '</svg>';
+}
+function line(el, pts, o) {
+  const w = Math.max(el.clientWidth, 260), h = o.h || 150, L = 42, R = 40, T = 12, B = 24, iw = w - L - R, ih = h - T - B;
+  const vals = pts.map(p => p.v), lo = Math.floor(Math.min(...vals) - 1), hi = Math.ceil(Math.max(...vals) + 1);
+  const X = i => L + iw * i / Math.max(pts.length - 1, 1), Y = v => T + ih - ih * (v - lo) / (hi - lo || 1);
+  let s = `<svg width="${w}" height="${h}" role="img" aria-label="${esc(o.aria)}">`;
+  for (let t = 0; t <= 2; t++) { const v = lo + (hi - lo) * t / 2, y = Y(v); s += `<line x1="${L}" x2="${w - R}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${L - 6}" y="${y + 4}" text-anchor="end">${v.toFixed(0)}%</text>`; }
+  s += `<polyline fill="none" stroke="var(--blue)" stroke-width="2" points="${pts.map((p, i) => X(i) + ',' + Y(p.v)).join(' ')}"/>`;
+  const e = pts.length - 1;
+  s += `<circle cx="${X(e)}" cy="${Y(pts[e].v)}" r="4" fill="var(--blue)"/><text class="lbl num" x="${X(e) + 7}" y="${Y(pts[e].v) + 4}">${pts[e].v.toFixed(1)}%</text>`;
+  const every = Math.ceil(pts.length / Math.floor(iw / 44));
+  pts.forEach((p, i) => { if (i % every === 0) s += `<text x="${X(i)}" y="${h - 6}" text-anchor="middle">${esc(p.l)}</text>`; });
+  el.innerHTML = s + '</svg>';
+}
+function hbars(el, rows, o) {   // rows: {name, v, label, extra, c}
+  const w = Math.max(el.clientWidth, 260), rh = 28, h = rows.length * rh + 6, nameW = Math.min(150, w * .38), extraW = 70, L = nameW + 6, R = extraW + 54;
+  const max = Math.max(...rows.map(r => r.v), 1), iw = w - L - R;
+  let s = `<svg width="${w}" height="${h}" role="img" aria-label="${esc(o.aria)}">`;
+  rows.forEach((r, i) => {
+    const y = i * rh + 3, bw = Math.max(iw * r.v / max, 1);
+    s += `<text x="${nameW}" y="${y + 17}" text-anchor="end" class="lbl">${esc(r.name)}</text><rect x="${L}" y="${y + 4}" width="${bw}" height="16" rx="2" fill="${r.c || 'var(--blue)'}"><title>${esc(r.t || '')}</title></rect>`;
+    s += `<text class="lbl num" x="${L + bw + 6}" y="${y + 17}">${r.label}</text>`;
+    if (r.extra) s += `<text class="num" x="${w - 2}" y="${y + 17}" text-anchor="end">${r.extra}</text>`;
+  });
+  el.innerHTML = s + '</svg>';
+}
+
+// ---- render
+function render() {
+  const st = state(), A = agg(st.cur, st.store, st.seg), P = st.prev ? agg(st.prev, st.store, st.seg) : null;
+  const storeTxt = st.store === 'all' ? 'both stores' : STORES[st.store], segTxt = st.seg === 'all' ? 'all segments' : st.seg;
+  $('fNote').textContent = `${mlabel(st.cur[0])} to ${mlabel(st.cur[st.cur.length - 1])}, ${storeTxt}, ${segTxt}`;
+  const chg = (a, b) => b ? (100 * (a / b - 1)) : null;
+  const dtxt = (c, unit = '%') => c === null ? 'no earlier period to compare' : `<span class="d ${c >= 0 ? 'up' : 'down'}" style="margin:0">${c >= 0 ? '▲' : '▼'} ${Math.abs(c).toFixed(1)}${unit}</span> vs previous ${st.n} months`;
+  const gmp = A.rev ? 100 * A.gm / A.rev : 0, gmpP = P && P.rev ? 100 * P.gm / P.rev : null;
+  $('kpis').innerHTML = [
+    ['Revenue', fmtM(A.rev), dtxt(chg(A.rev, P && P.rev))],
+    ['Gross margin', gmp.toFixed(1) + '%', gmpP === null ? 'no earlier period to compare' : `<span class="d ${gmp >= gmpP ? 'up' : 'down'}" style="margin:0">${gmp >= gmpP ? '▲' : '▼'} ${Math.abs(gmp - gmpP).toFixed(1)} pts</span> vs previous`],
+    ['Orders', fmtN(A.orders), dtxt(chg(A.orders, P && P.orders))],
+    ['Average order', 'KES ' + fmtN(A.orders ? A.rev / A.orders : 0), 'revenue per order'],
+    ['Active accounts', A.accounts === null ? 'n/a' : A.accounts.toFixed(0), A.accounts === null ? 'counted for both stores only' : 'average per month']
+  ].map(([l, v, d]) => `<div class="kpi"><div class="l">${l}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join('');
+  const cr = D.credit;
+  $('kpis2').innerHTML = [
+    ['Unpaid invoices', fmtM(cr.outstanding), 'open plus overdue, 30 Sep'],
+    ['Overdue', fmtM(cr.overdue), cr.overdue_invoices + ' invoices past due'],
+    ['Accounts gone quiet', String(D.quiet.length), 'much longer than usual, 30 Sep'],
+    ['Next 4 weeks', fmtN(D.forecast.future_weeks.reduce((s, _, i) => s + D.forecast.cats.reduce((a, c) => a + D.forecast.forecast[c][i][0], 0), 0) / 4), 'units per week, forecast']
+  ].map(([l, v, d]) => `<div class="kpi static"><div class="l">${l}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join('');
+
+  // trend
+  const months = st.cur, items = months.map(m => { const b = A.byMonth[m] || {rev: 0, gm: 0}; return {l: mlabel(m), v: b.rev, c: isPeak(m) ? 'var(--orange)' : 'var(--blue)', t: `${mlabel(m)}: ${fmtM(b.rev)}`, gm: b.rev ? 100 * b.gm / b.rev : 0}; });
+  const best = items.reduce((a, b) => b.v > a.v ? b : a), low = items.reduce((a, b) => b.v < a.v ? b : a);
+  $('hTrend').textContent = `Best month ${best.l} at ${fmtM(best.v)}; weakest ${low.l} at ${fmtM(low.v)}.`;
+  columns($('cTrend'), items, {aria: 'Monthly revenue', y: v => fmtK(v)});
+  const gmItems = items.filter(i => i.v > 0).map(i => ({l: i.l, v: i.gm}));
+  $('hMargin').textContent = gmItems.length ? `Margin has stayed between ${Math.min(...gmItems.map(g => g.v)).toFixed(1)}% and ${Math.max(...gmItems.map(g => g.v)).toFixed(1)}%.` : '';
+  if (gmItems.length) line($('cMargin'), gmItems, {aria: 'Gross margin percent by month'});
+
+  // segments (segment filter does not narrow this chart so segments stay comparable)
+  const S = agg(st.cur, st.store, 'all'), segRows = Object.entries(S.bySeg).map(([n, v]) => ({name: n, v: v.rev, gm: v.gm})).sort((a, b) => b.v - a.v);
+  const totalS = segRows.reduce((a, r) => a + r.v, 0);
+  $('hSeg').textContent = segRows.length ? `${segRows[0].name} is the largest segment: ${(100 * segRows[0].v / totalS).toFixed(0)}% of revenue.` : '';
+  hbars($('cSeg'), segRows.map(r => ({name: r.name, v: r.v, label: (100 * r.v / totalS).toFixed(0) + '%', extra: (100 * r.gm / r.v).toFixed(0) + '% margin', t: fmtM(r.v), c: st.seg === r.name ? 'var(--orange)' : 'var(--blue)'})), {aria: 'Revenue share by segment'});
+  const catRows = Object.entries(A.byCat).map(([n, v]) => ({name: n, v: v.rev, gm: v.gm})).sort((a, b) => b.v - a.v);
+  const totalC = catRows.reduce((a, r) => a + r.v, 0);
+  const worst = catRows.filter(r => r.v / totalC >= .05).sort((a, b) => a.gm / a.v - b.gm / b.v)[0];
+  $('hCat').textContent = catRows.length ? `${catRows[0].name} leads at ${(100 * catRows[0].v / totalC).toFixed(0)}% of revenue; thinnest margin among the big ones: ${worst.name} (${(100 * worst.gm / worst.v).toFixed(0)}%).` : '';
+  hbars($('cCat'), catRows.map(r => ({name: r.name, v: r.v, label: (100 * r.v / totalC).toFixed(0) + '%', extra: (100 * r.gm / r.v).toFixed(0) + '% margin', t: fmtM(r.v), c: worst && r.name === worst.name ? 'var(--orange)' : 'var(--blue)'})), {aria: 'Revenue share by category'});
+}
+
+function drawForecast() {
+  const F = D.forecast, cat = catSel.value, cats = cat === 'all' ? F.cats : [cat];
+  const sum = (obj, i, j) => cats.reduce((a, c) => a + (j === undefined ? obj[c][i] : obj[c][i][j]), 0);
+  const act = F.actual_weeks.map((_, i) => sum(F.actual, i)), fut = F.future_weeks.map((_, i) => ({f: sum(F.forecast, i, 0), lo: sum(F.forecast, i, 1), hi: sum(F.forecast, i, 2), ly: sum(F.last_year, i)}));
+  $('hFc').textContent = `${cat === 'all' ? 'All categories' : cat}: about ${fmtN(fut.reduce((a, f) => a + f.f, 0) / 4)} units a week over the next four weeks.`;
+  const el = $('cFc'), w = Math.max(el.clientWidth, 280), h = 260, L = 48, R = 26, T = 14, B = 26, iw = w - L - R, ih = h - T - B;
+  const n = act.length + fut.length, X = i => L + iw * i / (n - 1);
+  const max = niceMax(Math.max(...act, ...fut.map(f => f.hi), ...fut.map(f => f.ly))), Y = v => T + ih - ih * v / max;
+  let s = `<svg width="${w}" height="${h}" role="img" aria-label="Weekly units, actual and forecast">`;
+  for (let t = 0; t <= 3; t++) { const y = T + ih - ih * t / 3; s += `<line x1="${L}" x2="${w - R}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${L - 6}" y="${y + 4}" text-anchor="end">${fmtN(max * t / 3)}</text>`; }
+  s += `<polyline fill="none" stroke="var(--ink)" stroke-width="2" points="${act.map((v, i) => X(i) + ',' + Y(v)).join(' ')}"/>`;
+  const fx = i => X(act.length + i);
+  const band = fut.map((f, i) => fx(i) + ',' + Y(f.hi)).concat(fut.map((f, i) => fx(fut.length - 1 - i) + ',' + Y(fut[fut.length - 1 - i].lo)));
+  s += `<polygon points="${band.join(' ')}" fill="var(--band)" stroke="var(--blue)" stroke-width="1" stroke-opacity=".5"/>`;
+  s += `<polyline fill="none" stroke="var(--blue)" stroke-width="2.5" points="${[X(act.length - 1) + ',' + Y(act[act.length - 1])].concat(fut.map((f, i) => fx(i) + ',' + Y(f.f))).join(' ')}"/>`;
+  fut.forEach((f, i) => { s += `<circle cx="${fx(i)}" cy="${Y(f.f)}" r="4" fill="var(--blue)"/><circle cx="${fx(i)}" cy="${Y(f.ly)}" r="3.5" fill="var(--grey)"><title>Same week last year: ${fmtN(f.ly)}</title></circle>`; });
+  const lbl = d => { const [y, m, dd] = d.split('-'); return dd + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m - 1]; };
+  const all = F.actual_weeks.concat(F.future_weeks), every = Math.ceil(n / Math.floor(iw / 52));
+  all.forEach((d, i) => { if ((n - 1 - i) % every === 0) s += `<text x="${X(i)}" y="${h - 8}" text-anchor="middle">${lbl(d)}</text>`; });
+  s += `<line x1="${X(act.length - .5)}" x2="${X(act.length - .5)}" y1="${T}" y2="${T + ih}" stroke="var(--grey)" stroke-dasharray="3 3"/><text x="${X(act.length - .5) + 5}" y="${T + 10}">forecast</text>`;
+  el.innerHTML = s + '</svg>';
+  $('tFc').innerHTML = '<thead><tr><th>Week starting</th><th class="r">Forecast</th><th class="r">80% range</th><th class="r">Same week last year</th></tr></thead><tbody>' +
+    fut.map((f, i) => `<tr><td>${lbl(F.future_weeks[i])}</td><td class="r num">${fmtN(f.f)}</td><td class="r num">${fmtN(f.lo)} to ${fmtN(f.hi)}</td><td class="r num">${fmtN(f.ly)}</td></tr>`).join('') + '</tbody>';
+  $('fcNote').textContent = `How accurate? On test weeks (Apr to Sep 2026) the forecast was off by ${F.test_wape.blend}% on average, against ${F.test_wape.b2_avg4}% for a 4-week average. Category ranges are added up, so the total range is approximate. Peak weeks are the model's weak spot, so keep the upper end of the range in mind.`;
+}
+
+function drawStatic() {
+  const cr = D.credit;
+  $('tCredit').innerHTML = '<thead><tr><th>Account</th><th class="r">Unpaid</th><th class="r">Overdue</th><th class="r">% of limit</th></tr></thead><tbody>' +
+    cr.top.map(r => `<tr><td>${esc(r.label)}</td><td class="r num">${fmtK(r.outstanding)}</td><td class="r num">${fmtK(r.overdue)}</td><td class="r">${r.pct_limit === null ? '' : `<span class="pill ${r.pct_limit > 100 ? 'bad' : r.pct_limit > 80 ? 'warn' : ''} num">${r.pct_limit}%</span>`}</td></tr>`).join('') + '</tbody>';
+  $('tRfm').innerHTML = '<thead><tr><th>Group</th><th class="r">Accounts</th><th class="r">Revenue share</th><th class="r">Days since last order</th></tr></thead><tbody>' +
+    D.rfm.map(r => `<tr><td>${esc(r.rfm_segment)}</td><td class="r num">${r.accounts}</td><td class="r num">${r.share.toFixed(0)}%</td><td class="r num">${Math.round(r.recency)}</td></tr>`).join('') + '</tbody>';
+  $('tRisk').innerHTML = '<thead><tr><th>Account</th><th class="r">Days quiet</th><th class="r">Usual gap (days)</th><th class="r">Revenue to date</th></tr></thead><tbody>' +
+    D.quiet.map(r => `<tr><td>${esc(r.label)}</td><td class="r"><span class="pill ${r.days > 100 ? 'bad' : 'warn'} num">${r.days}</span></td><td class="r num">${r.usual_gap.toFixed(0)}</td><td class="r num">${fmtM(r.revenue)}</td></tr>`).join('') + '</tbody>';
+  const L = D.late.slice().sort((a, b) => b.late_pct - a.late_pct);
+  $('hLate').textContent = `Hotels and schools pay after the due date almost every time (${L[0].late_pct.toFixed(0)}%).`;
+  hbars($('cLate'), L.map(r => ({name: r.segment, v: r.late_pct, label: r.late_pct.toFixed(0) + '%', extra: r.avg_days_past_due.toFixed(0) + ' days late', t: `${r.customers} accounts`, c: r.late_pct > 95 ? 'var(--orange)' : 'var(--blue)'})), {aria: 'Share of invoices paid late by segment'});
+}
+function all() { render(); drawForecast(); drawStatic(); }
+all();
+let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(all, 120); });
+</script>

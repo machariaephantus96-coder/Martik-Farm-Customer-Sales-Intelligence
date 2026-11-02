@@ -1,0 +1,73 @@
+customer_id,customer_label,segment,delivery_area,county,first_order_date,contract_payment_terms_days,credit_limit_kes,is_account
+C001,C001 Coffee Chain,Coffee Chain,Multiple outlets,Nairobi,2024-10-01,30,740000,1
+C002,C002 Hotel/Lodge,Hotel/Lodge,Nairobi CBD,Nairobi,2024-10-02,45,650000,1
+C003,C003 Restaurant,Restaurant,Nairobi CBD,Nairobi,2024-10-01,30,230000,1
+C004,C004 School/Daycare,School/Daycare,Nairobi,Nairobi,2024-10-02,60,430000,1
+C101,C101 Restaurant,Restaurant,Eastleigh,Nairobi,2024-10-01,14,50000,1
+C102,C102 Restaurant,Restaurant,Ngong Road,Nairobi,2024-10-01,14,50000,1
+C103,C103 Restaurant,Restaurant,Westlands,Nairobi,2024-10-01,7,50000,1
+C104,C104 Restaurant,Restaurant,Langata,Nairobi,2024-10-01,30,50000,1
+C105,C105 Restaurant,Restaurant,Ruiru,Kiambu,2024-10-04,7,50000,1
+C106,C106 Restaurant,Restaurant,Nairobi CBD,Nairobi,2024-10-02,7,50000,1
+C107,C107 Restaurant,Restaurant,Parklands,Nairobi,2026-05-04,30,50000,1
+C108,C108 Restaurant,Restaurant,Kilimani,Nairobi,2024-10-03,14,50000,1
+C109,C109 Restaurant,Restaurant,Kiambu Road,Kiambu,2025-05-24,14,50000,1
+C110,C110 Restaurant,Restaurant,Nairobi CBD,Nairobi,2024-10-08,14,50000,1
+C111,C111 Restaurant,Restaurant,Eastleigh,Nairobi,2024-10-01,30,80000,1
+C112,C112 Restaurant,Restaurant,Kasarani/Roysambu,Nairobi,2026-03-24,30,50000,1
+C113,C113 Restaurant,Restaurant,Kiambu Road,Kiambu,2024-10-04,30,60000,1
+C114,C114 Restaurant,Restaurant,Thika Road,Kiambu,2024-10-04,7,50000,1
+C115,C115 Restaurant,Restaurant,Kasarani/Roysambu,Nairobi,2024-10-02,7,50000,1
+C116,C116 Restaurant,Restaurant,South B/C,Nairobi,2024-10-01,30,50000,1
+C117,C117 Restaurant,Restaurant,Nairobi CBD,Nairobi,2026-03-31,30,60000,1
+C118,C118 Restaurant,Restaurant,Gigiri/Runda,Nairobi,2025-09-01,30,70000,1
+C119,C119 Restaurant,Restaurant,Westlands,Nairobi,2025-12-25,14,50000,1
+C120,C120 Restaurant,Restaurant,Westlands,Nairobi,2026-06-02,14,50000,1
+C121,C121 Restaurant,Restaurant,Kilimani,Nairobi,2024-10-02,30,60000,1
+C122,C122 Restaurant,Restaurant,Langata,Nairobi,2024-10-01,14,50000,1
+C123,C123 Cafe/Bakery,Cafe/Bakery,Langata,Nairobi,2024-10-07,14,50000,1
+C124,C124 Cafe/Bakery,Cafe/Bakery,Ngong Road,Nairobi,2024-10-01,7,50000,1
+C125,C125 Cafe/Bakery,Cafe/Bakery,Eastleigh,Nairobi,2024-11-17,30,50000,1
+C126,C126 Cafe/Bakery,Cafe/Bakery,Kilimani,Nairobi,2024-10-02,30,50000,1
+C127,C127 Cafe/Bakery,Cafe/Bakery,South B/C,Nairobi,2024-10-01,14,50000,1
+C128,C128 Cafe/Bakery,Cafe/Bakery,Parklands,Nairobi,2024-10-03,7,50000,1
+C129,C129 Cafe/Bakery,Cafe/Bakery,Kasarani/Roysambu,Nairobi,2024-12-21,7,50000,1
+C130,C130 Cafe/Bakery,Cafe/Bakery,Westlands,Nairobi,2024-10-01,14,50000,1
+C131,C131 Cafe/Bakery,Cafe/Bakery,Westlands,Nairobi,2024-10-03,14,50000,1
+C132,C132 Cafe/Bakery,Cafe/Bakery,Langata,Nairobi,2025-01-13,14,50000,1
+C133,C133 Hotel/Lodge,Hotel/Lodge,Eastleigh,Nairobi,2024-10-01,30,460000,1
+C134,C134 Hotel/Lodge,Hotel/Lodge,Upper Hill,Nairobi,2026-04-26,30,110000,1
+C135,C135 Hotel/Lodge,Hotel/Lodge,Eastleigh,Nairobi,2026-03-07,45,270000,1
+C136,C136 Hotel/Lodge,Hotel/Lodge,Nairobi CBD,Nairobi,2026-04-14,60,290000,1
+C137,C137 Hotel/Lodge,Hotel/Lodge,Kiambu Road,Kiambu,2024-10-01,45,250000,1
+C138,C138 Hotel/Lodge,Hotel/Lodge,Lavington,Nairobi,2024-10-02,45,130000,1
+C139,C139 Caterer,Caterer,Nairobi CBD,Nairobi,2024-10-04,7,50000,1
+C140,C140 Caterer,Caterer,Westlands,Nairobi,2025-08-19,7,50000,1
+C141,C141 Caterer,Caterer,Nairobi CBD,Nairobi,2024-10-04,7,50000,1
+C142,C142 Caterer,Caterer,Westlands,Nairobi,2025-07-26,0,0,1
+C143,C143 Caterer,Caterer,Langata,Nairobi,2024-10-01,0,0,1
+C144,C144 Caterer,Caterer,Gigiri/Runda,Nairobi,2025-08-12,7,50000,1
+C145,C145 Caterer,Caterer,Upper Hill,Nairobi,2024-10-11,7,50000,1
+C146,C146 Caterer,Caterer,Lavington,Nairobi,2024-10-10,14,50000,1
+C147,C147 Caterer,Caterer,Embakasi,Nairobi,2025-03-23,14,50000,1
+C148,C148 Caterer,Caterer,Upper Hill,Nairobi,2026-06-20,0,0,1
+C149,C149 School/Daycare,School/Daycare,Westlands,Nairobi,2024-10-05,45,60000,1
+C150,C150 School/Daycare,School/Daycare,Kilimani,Nairobi,2025-06-23,30,80000,1
+C151,C151 School/Daycare,School/Daycare,Embakasi,Nairobi,2024-10-01,45,150000,1
+C152,C152 School/Daycare,School/Daycare,Langata,Nairobi,2024-10-01,60,200000,1
+C153,C153 School/Daycare,School/Daycare,Embakasi,Nairobi,2026-01-05,60,200000,1
+C154,C154 School/Daycare,School/Daycare,Gigiri/Runda,Nairobi,2025-08-27,45,60000,1
+C155,C155 Grocer/Supermarket,Grocer/Supermarket,Kasarani/Roysambu,Nairobi,2024-11-02,14,50000,1
+C156,C156 Grocer/Supermarket,Grocer/Supermarket,Parklands,Nairobi,2025-07-07,7,50000,1
+C157,C157 Grocer/Supermarket,Grocer/Supermarket,Westlands,Nairobi,2025-06-12,7,50000,1
+C158,C158 Grocer/Supermarket,Grocer/Supermarket,Westlands,Nairobi,2025-11-27,7,50000,1
+C159,C159 Grocer/Supermarket,Grocer/Supermarket,South B/C,Nairobi,2025-04-23,30,50000,1
+C160,C160 Grocer/Supermarket,Grocer/Supermarket,Eastleigh,Nairobi,2025-01-31,30,50000,1
+C161,C161 Fast Food,Fast Food,Nairobi CBD,Nairobi,2025-03-08,0,0,1
+C162,C162 Fast Food,Fast Food,Westlands,Nairobi,2024-10-02,14,50000,1
+C163,C163 Fast Food,Fast Food,South B/C,Nairobi,2024-10-02,0,0,1
+C164,C164 Fast Food,Fast Food,Nairobi CBD,Nairobi,2025-03-17,0,0,1
+C165,C165 Fast Food,Fast Food,Westlands,Nairobi,2025-06-28,14,50000,1
+C166,C166 Fast Food,Fast Food,Ruiru,Kiambu,2025-03-18,7,50000,1
+W001,W001 Walk-in Retail,Walk-in Retail,,Nairobi,2024-10-01,0,0,0
+W002,W002 Walk-in Retail,Walk-in Retail,,Kiambu,2024-10-01,0,0,0

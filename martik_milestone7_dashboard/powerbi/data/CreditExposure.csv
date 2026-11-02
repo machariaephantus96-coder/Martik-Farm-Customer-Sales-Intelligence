@@ -1,0 +1,64 @@
+customer_id,open_kes,overdue_kes,written_off_kes,unpaid_invoices,customer_label,segment,credit_limit_kes,outstanding_kes,pct_of_credit_limit
+C001,587565.5,69104.0,0.0,31.0,C001 Coffee Chain,Coffee Chain,740000,656669.5,88.7
+C002,417799.0,151795.6,0.0,43.0,C002 Hotel/Lodge,Hotel/Lodge,650000,569594.6,87.6
+C003,195789.0,20689.0,0.0,22.0,C003 Restaurant,Restaurant,230000,216478.0,94.1
+C004,203283.0,131876.9,0.0,35.0,C004 School/Daycare,School/Daycare,430000,335159.9,77.9
+C101,61191.5,23092.5,0.0,16.0,C101 Restaurant,Restaurant,50000,84284.0,168.6
+C102,4693.0,0.0,0.0,2.0,C102 Restaurant,Restaurant,50000,4693.0,9.4
+C103,16145.0,1820.0,0.0,5.0,C103 Restaurant,Restaurant,50000,17965.0,35.9
+C105,0.0,0.0,4741.5,0.0,C105 Restaurant,Restaurant,50000,0.0,0.0
+C106,5398.0,20251.0,0.0,6.0,C106 Restaurant,Restaurant,50000,25649.0,51.3
+C107,40001.0,10093.5,0.0,14.0,C107 Restaurant,Restaurant,50000,50094.5,100.2
+C108,14752.5,3938.5,0.0,5.0,C108 Restaurant,Restaurant,50000,18691.0,37.4
+C110,0.0,5687.0,0.0,2.0,C110 Restaurant,Restaurant,50000,5687.0,11.4
+C111,78212.0,35027.0,0.0,23.0,C111 Restaurant,Restaurant,80000,113239.0,141.5
+C112,54031.5,11667.5,0.0,18.0,C112 Restaurant,Restaurant,50000,65699.0,131.4
+C113,35317.5,4657.0,0.0,9.0,C113 Restaurant,Restaurant,60000,39974.5,66.6
+C114,13249.0,9469.0,0.0,9.0,C114 Restaurant,Restaurant,50000,22718.0,45.4
+C115,17872.5,0.0,0.0,5.0,C115 Restaurant,Restaurant,50000,17872.5,35.7
+C116,0.0,0.0,1195.5,0.0,C116 Restaurant,Restaurant,50000,0.0,0.0
+C117,36048.5,7903.0,0.0,11.0,C117 Restaurant,Restaurant,60000,43951.5,73.3
+C118,58195.5,8715.0,0.0,19.0,C118 Restaurant,Restaurant,70000,66910.5,95.6
+C119,25318.5,4591.0,0.0,8.0,C119 Restaurant,Restaurant,50000,29909.5,59.8
+C120,10399.0,11746.5,0.0,5.0,C120 Restaurant,Restaurant,50000,22145.5,44.3
+C121,0.0,0.0,3574.0,0.0,C121 Restaurant,Restaurant,60000,0.0,0.0
+C122,6064.0,15476.5,0.0,7.0,C122 Restaurant,Restaurant,50000,21540.5,43.1
+C123,770.0,6759.5,0.0,5.0,C123 Cafe/Bakery,Cafe/Bakery,50000,7529.5,15.1
+C125,29922.0,4140.0,0.0,12.0,C125 Cafe/Bakery,Cafe/Bakery,50000,34062.0,68.1
+C126,26322.5,3983.5,0.0,20.0,C126 Cafe/Bakery,Cafe/Bakery,50000,30306.0,60.6
+C127,6271.5,0.0,0.0,4.0,C127 Cafe/Bakery,Cafe/Bakery,50000,6271.5,12.5
+C129,12970.5,0.0,0.0,4.0,C129 Cafe/Bakery,Cafe/Bakery,50000,12970.5,25.9
+C130,8646.5,0.0,0.0,5.0,C130 Cafe/Bakery,Cafe/Bakery,50000,8646.5,17.3
+C131,6936.0,4490.5,0.0,6.0,C131 Cafe/Bakery,Cafe/Bakery,50000,11426.5,22.9
+C132,13080.0,7132.0,0.0,10.0,C132 Cafe/Bakery,Cafe/Bakery,50000,20212.0,40.4
+C133,0.0,0.0,22277.0,0.0,C133 Hotel/Lodge,Hotel/Lodge,460000,0.0,0.0
+C134,52189.0,12413.0,0.0,10.0,C134 Hotel/Lodge,Hotel/Lodge,110000,64602.0,58.7
+C135,0.0,0.0,3282.0,0.0,C135 Hotel/Lodge,Hotel/Lodge,270000,0.0,0.0
+C136,154589.5,28400.28,0.0,21.0,C136 Hotel/Lodge,Hotel/Lodge,290000,182989.78,63.1
+C137,220887.5,64545.0,0.0,35.0,C137 Hotel/Lodge,Hotel/Lodge,250000,285432.5,114.2
+C138,0.0,0.0,1326.0,0.0,C138 Hotel/Lodge,Hotel/Lodge,130000,0.0,0.0
+C139,0.0,6799.5,0.0,1.0,C139 Caterer,Caterer,50000,6799.5,13.6
+C140,29150.0,0.0,0.0,3.0,C140 Caterer,Caterer,50000,29150.0,58.3
+C141,10979.0,0.0,0.0,1.0,C141 Caterer,Caterer,50000,10979.0,22.0
+C143,6826.5,0.0,0.0,1.0,C143 Caterer,Caterer,0,6826.5,
+C144,5611.0,11774.0,0.0,4.0,C144 Caterer,Caterer,50000,17385.0,34.8
+C145,0.0,0.0,3140.5,0.0,C145 Caterer,Caterer,50000,0.0,0.0
+C147,0.0,0.0,7025.85,0.0,C147 Caterer,Caterer,50000,0.0,0.0
+C148,4473.0,9990.0,0.0,3.0,C148 Caterer,Caterer,0,14463.0,
+C149,43050.5,0.0,0.0,11.0,C149 School/Daycare,School/Daycare,60000,43050.5,71.8
+C150,111517.5,18843.0,0.0,19.0,C150 School/Daycare,School/Daycare,80000,130360.5,163.0
+C151,129189.0,0.0,0.0,18.0,C151 School/Daycare,School/Daycare,150000,129189.0,86.1
+C152,99849.5,45699.95,0.0,24.0,C152 School/Daycare,School/Daycare,200000,145549.45,72.8
+C153,93180.0,35657.229999999996,0.0,29.0,C153 School/Daycare,School/Daycare,200000,128837.23,64.4
+C154,56389.5,5889.15,0.0,13.0,C154 School/Daycare,School/Daycare,60000,62278.65,103.8
+C155,17503.0,13805.5,0.0,11.0,C155 Grocer/Supermarket,Grocer/Supermarket,50000,31308.5,62.6
+C156,0.0,0.0,3580.0,0.0,C156 Grocer/Supermarket,Grocer/Supermarket,50000,0.0,0.0
+C157,13509.5,1820.0,0.0,5.0,C157 Grocer/Supermarket,Grocer/Supermarket,50000,15329.5,30.7
+C158,15614.0,7376.0,0.0,6.0,C158 Grocer/Supermarket,Grocer/Supermarket,50000,22990.0,46.0
+C159,13810.0,1731.5,0.0,6.0,C159 Grocer/Supermarket,Grocer/Supermarket,50000,15541.5,31.1
+C160,0.0,0.0,2690.0,0.0,C160 Grocer/Supermarket,Grocer/Supermarket,50000,0.0,0.0
+C161,2507.5,6145.0,0.0,2.0,C161 Fast Food,Fast Food,0,8652.5,
+C163,0.0,3230.5,0.0,1.0,C163 Fast Food,Fast Food,0,3230.5,
+C164,0.0,0.0,3193.5,0.0,C164 Fast Food,Fast Food,0,0.0,
+C165,11626.5,0.0,0.0,4.0,C165 Fast Food,Fast Food,50000,11626.5,23.3
+C166,16224.5,3938.5,0.0,5.0,C166 Fast Food,Fast Food,50000,20163.0,40.3
