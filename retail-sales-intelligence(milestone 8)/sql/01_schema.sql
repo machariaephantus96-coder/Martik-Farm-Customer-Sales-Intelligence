@@ -1,0 +1,1 @@
+-- TODO (yours): CREATE TABLE statements for stores, products, customers, transactions.

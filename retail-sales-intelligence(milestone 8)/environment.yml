@@ -1,0 +1,22 @@
+name: retail-capstone
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - numpy
+  - scipy
+  - statsmodels
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - sqlalchemy
+  - psycopg2-binary
+  - python-dotenv
+  - jupyterlab
+  - nbconvert
+  - nbformat
+  - ipykernel
+  - pip:
+      - papermill
